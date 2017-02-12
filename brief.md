@@ -10,7 +10,7 @@ Writing harmony parts to accompany a melody which fit a chord progression is tim
 - Output a user-specified number of harmony parts
 - Harmony parts should be taken from notes of the chord
 - Harmony parts should be voice-led
-- Harmony parts should follow voicing rules which should be chosen by the user from a set of presets (4-part close, drop 2 etc)
+- Harmony parts should follow traditional voicing rules which should be chosen by the user from a set of presets (4-part close, drop 2 etc)
 - The final product should be accessible on multiple devices - phones for rehearsals, desktop computers
 
 ## Attributes
