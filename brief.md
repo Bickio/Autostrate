@@ -1,8 +1,9 @@
 # Brief
 
-## Conceptual Statement
-The issue: writing harmony parts to accompany a melody which fit a chord progression is time-taking and requires a medium level of music theory knowledge.
-The purpose of the software is to provide an easy to use and accurate voicing generator for use in rehearsals and in the composition process.
+## Issue
+Writing harmony parts to accompany a melody which fit a chord progression is time-taking and requires a medium level of music theory knowledge. Many people have trouble with harmony even when rhythmic and melodic concepts are not an issue. This is often because the person needing to write the harmonies doesn't play a chordal instrument and so can't easily hear the sounds in their head. When composing and arranging music, I spend lots of time going back and forth listening and then adjusting, which can be time-consuming and more importantly can end up with bad sounding results. This is particularly relevant when writing parts a short time before a rehearsal or even during a rehearsal and you have no way listening to the sound without disturbing others.
+
+
 
 ## Specifications
 - Have intuitive input of chords and melody
