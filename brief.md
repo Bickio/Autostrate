@@ -15,17 +15,19 @@ Writing harmony parts to accompany a melody which fit a chord progression is tim
 ## Specifications
 
 - Have intuitive input of chords and melody via a GUI
--- This is so that it is easy to use. If it if unintuitive, the time taken learning and using the software will make it slower than the alternative which is writing parts by hand
+ - This is so that it is easy to use. If it if unintuitive, the time taken learning and using the software will make it slower than the alternative which is writing parts by hand
 - Output a user-specified number of harmony parts
--- This is important for making the software usable in as many common situations as possible. If the software is unsuitable for one situation, it may turn people off using it for other situations
+ - This is important for making the software usable in as many common situations as possible. If the software is unsuitable for one situation, it may turn people off using it for other situations
 - Harmony parts should be taken from notes of the chord
--- This is an easy way to make sure the harmonies generated are pleasant to listen to. If users have to fix up the output of the software too much, it can be more time taking than writing from scratch
+ - This is an easy way to make sure the harmonies generated are pleasant to listen to. If users have to fix up the output of the software too much, it can be more time taking than writing from scratch
 - Harmony parts should be voice-led
--- This is mostly so that players playing the generated parts don't have to jump large intervals, and can practice their parts without sounding terrible
+ - This is mostly so that players playing the generated parts don't have to jump large intervals, and can practice their parts without sounding terrible
 - Harmony parts should follow traditional voicing rules which should be chosen by the user from a set of presets (4-part close, drop 2 etc)
--- This is the algorithm implimentation section. Only the most common algorithms for generating harmonies need to be included in the proof of concept/prototype. Ideally the software would have support for many different algorithms as well as custom scripting
+ - This is the algorithm implimentation section. Only the most common algorithms for generating harmonies need to be included in the proof of concept/prototype. 
+ - Ideally the software would have support for many different algorithms as well as custom scripting
 - The final product should be accessible on multiple devices - phones for rehearsals, desktop computers
--- For this, it is probably best to build it as a web app. That way computation can happen in the cloud, and it can be accessible on any platform. It will also make it easier to implement an algorithm/song sharing system (not part of the brief), making it more flexible/extensible/sustainable
+ - For this, it is probably best to build it as a web app. That way computation can happen in the cloud, and it can be accessible on any platform. 
+ - It will also make it easier to implement an algorithm/song sharing system (not part of the brief), making it more flexible/extensible/sustainable
 
 ## Attributes
 - Easy to use and access
