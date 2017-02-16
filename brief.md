@@ -32,12 +32,11 @@ Writing harmony parts to accompany a melody which fit a chord progression is tim
  - This is so that it is easy to use. 
 - Have flexible output to suit people with different needs
 - Output a user-specified number of harmony parts
-- Harmony parts should be taken from notes of the chord
+- Harmony parts should be taken from notes of the chord and should be voice-led
  - This is an easy way to make sure the harmonies generated are pleasant to listen to.
-- Harmony parts should be voice-led
 - Harmony parts should follow traditional voicing rules which should be chosen by the user from a set of presets (4-part close, drop 2 etc)
  - This is to make it flexible. Only the most common algorithms for generating harmonies need to be included in the proof of concept/prototype. 
  - Ideally the software would have support for many different algorithms as well as custom scripting
 - The final product should be accessible on multiple devices - phones for rehearsals, desktop computers
  - For this, it is probably best to build it as a web app. That way computation can happen in the cloud, and it can be accessible on any platform. 
- - It will also make it easier to implement an algorithm/song sharing system (not part of the brief), making it more flexible/extensible/sustainable
+ - It will also make it easier to implement an algorithm/song sharing system at a later date (not part of the brief), making it more flexible/extensible/sustainable
