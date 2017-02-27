@@ -8,12 +8,37 @@
 
 
 ## Issue
-Writing harmony parts to accompany a melody which fit a chord progression is time-taking and requires a medium level of music theory knowledge. Many people have trouble with harmony even when rhythmic and melodic concepts are not an issue. This is often because the person needing to write the harmonies doesn't play a chordal instrument and so can't easily hear the sounds in their head. When composing and arranging music, I spend lots of time going back and forth listening and then adjusting, which can be time-consuming and more importantly can end up with bad sounding results. This is particularly relevant when writing parts a short time before a rehearsal or even during a rehearsal and you have no way listening to the sound without disturbing others.
+Writing harmony parts to accompany a melody which fit a chord progression is time-taking and requires a medium level of music theory knowledge. Many people have trouble with harmony even when rhythmic and melodic concepts are not an issue. This is often because the person needing to write the harmonies doesn't play a chordal instrument and so can't easily hear the sounds in their head. When composing and arranging music, I spend lots of time going back and forth listening and then adjusting, which can be time-consuming and more importantly can end up with bad sounding results. This is particularly relevant when writing parts a short time before a rehearsal or even during a rehearsal and you have no way listening to the sound without disturbing others around you.
+
+## The opportunity
+This issue gives rise to an opportunity for creating a solution to the issue. Possible solutions for this include 
+#### An app specifically designed to write voice chords among instuments
+- Pros:
+ - Standalone
+ - Accessible
+ - Doesn't exist at all
+- Cons:
+ - Only does one specific task 
+ 
+#### A list of objective easy to follow rules and logic for how to write voicings
+- Pros:
+- Cons:
+ - Already exists in abundance
+ - Doesn't solve the problem of time taking work
+ 
+#### A plugin or script for a pre-existing piece of composition software
+- Pros:
+ - Has some backend already available
+ - Already partly exists in some proprietary software
+- Cons:
+ - Relies on another piece of software
+Of these possibilities, the app seems the most viable because it is self-contained and is specifically designed to fix the issue.
+So the opportunity
 
 ## Stakeholders
-- The main stakeholder (direct user) of the software is the composer, arranger or band leader. 
+- The main stakeholder (direct user) of the software is the composer, arranger or band/section leader who will be physically using the app. 
 - The secondary stakeholders of the software are the musicians who will have to play the music. 
-- The tertiary stakeholders are the people who will listen to the music.
+- Other stakeholders are people who will listen to the music, or interact with the music in some way.
 
 ## Attributes
 - Easy to use and access
