@@ -13,7 +13,7 @@ Writing harmony parts to accompany a melody which fit a chord progression is tim
 This leads to an opportunity. Currently there is no perfect solution available. If you search online, the only solutions that exist are instructions for how to write voivings by hand, and a few built in features of proprietary music notation software such as sibelius. Neither of these two solutions is particularly useful. Writing voicings by hand still requires knowledge/time/experience, and most music notation software is expensive and complicated to use. There is an opportunity here to create a piece of software designed to do this task.
 
 ## Social and Physical environment
-The Physical environment
+The Physical environment 
 
 ## Stakeholders
 - The main stakeholder (direct user) of the software is the composer, arranger or band/section leader who is tasked with writing ensemble parts. 
