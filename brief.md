@@ -1,6 +1,6 @@
 
 
-# Brief
+# Brief / planning doc
 
 ## Issue
 Writing harmony parts to accompany a melody which fit a chord progression is time-taking and requires a medium level of 
@@ -17,6 +17,19 @@ notation software is expensive and complicated to use.
 
 There is an opportunity here to create a piece of software designed to automate the process of writing orchestrations.
 
+## Stakeholders
+- The main stakeholder (direct user) of the software is the composer, arranger or band/section leader who is tasked with 
+writing ensemble parts. 
+- The secondary stakeholders of the software are the musicians who will have to play the music. 
+- Other stakeholders are people who will listen to the music, or interact with the music in some way.
+
+## Questions to ask stakeholders
+1. Have you experienced the issue
+2. Would you use a digital tool to speed up the process
+3. What are the most important/useful features to have in such a product
+4. What should I consider when designing making the product
+5. What would you use it for and in what environment
+
 ## Considerations
 - The software needs to be easy to use and access
     - If it is not easy to use, the time taken learning and using the software will make it slower than the alternative 
@@ -31,11 +44,3 @@ There is an opportunity here to create a piece of software designed to automate 
     This also affects the tertiary stakeholders in a major way, because if the music doesn't sound good, they will be 
     unhappy. If the generated parts are hard or awkward to play that negatively affects the secondary stakeholders, 
     because they won't enjoy playing the music and therefore won't practice.
-
-## Stakeholders
-- The main stakeholder (direct user) of the software is the composer, arranger or band/section leader who is tasked with 
-writing ensemble parts. 
-- The secondary stakeholders of the software are the musicians who will have to play the music. 
-- Other stakeholders are people who will listen to the music, or interact with the music in some way.
-
-
