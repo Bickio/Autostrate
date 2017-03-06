@@ -23,6 +23,29 @@ writing ensemble parts.
 - The secondary stakeholders of the software are the musicians who will have to play the music. 
 - Other stakeholders are people who will listen to the music, or interact with the music in some way.
 
+### Further explaination of how different stakeholders in different contexts may experience the issue
+
+#### Scenarios:
+1. Medium sized jazz band
+    - Instruments: bass, piano, guitar, drums, trumpet, alto saxophone, tenor saxophone and trombone.
+    - They rehearse once each week for 1 hour
+    - Drummer is band leader, and writes/organises music to play
+        - Has music theory knowledge of rhythm, but no knowledge of harmony
+        - Can find lead sheets (containing melody and chords) for the pieces they play online. [Example](lead sheet)
+        - This is enough for the bass, piano, guitar and drums
+        - The horns (trumpet, alto saxophone, tenor saxophone and trombone) need written harmony parts in the 
+        appropriate [transposition](http://music.stackexchange.com/questions/5374/what-is-a-transposing-instrument) for 
+        the instrument
+        - The drummer lacks the music theory knowledge to do this and the other band members are all working full time 
+        and have no time to do this
+2. Small school pop band
+    - Instruments: Drums, Bass, Rhythm Guitar and vocals, Lead guitar and vocals, Lead vocals
+    - The Drums, Bass, 2 Guitars and lead vocalist have learnt the songs by ear
+    - The band wants to add some cool backup vocal harmonies
+    - None of them have music theory training
+    - They know the chords and can work out the notes of the melody, but rhythm notation is beyond their capabilities
+    - The singers have tried to come up with harmonies on thier own, but they don't fit with the chords of the song
+    
 ## Questions to ask stakeholders
 1. Have you experienced the issue
 2. Would you use a digital tool to speed up the process
@@ -49,3 +72,4 @@ writing ensemble parts.
     which will in turn affect how the software can change to reflect changes in stakeholder needs and it's ability to 
     solve more issues and fill more needs/opportunities in the future.
 
+[lead sheet]: http://www.piano-ology.com/JazzSchool/Images/LeadSheetExamples/AutumnLeaves.gif "Lead sheet example"
