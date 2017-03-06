@@ -43,4 +43,9 @@ writing ensemble parts.
     - If users have to fix up the output of the software too much, it can be more time taking than writing from scratch. 
     This also affects the tertiary stakeholders in a major way, because if the music doesn't sound good, they will be 
     unhappy. If the generated parts are hard or awkward to play that negatively affects the secondary stakeholders, 
-    because they won't enjoy playing the music and therefore won't practice.
+    because they won't enjoy playing the music and therefore won't practice
+- It should be easily maintainable
+    - If the software is not easy to maintain from a development perspective, it won't be easy to develop and maintain,
+    which will in turn affect how the software can change to reflect changes in stakeholder needs and it's ability to 
+    solve more issues and fill more needs/opportunities in the future.
+
