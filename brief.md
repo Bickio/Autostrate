@@ -45,7 +45,14 @@ writing ensemble parts.
     - None of them have music theory training
     - They know the chords and can work out the notes of the melody, but rhythm notation is beyond their capabilities
     - The singers have tried to come up with harmonies on thier own, but they don't fit with the chords of the song
-    
+3. A cappella vocal quartet
+    - Instruments: Soprano, Alto, Tenor and Bass voices
+    - They all work full time and need a quick way to write out parts for songs they want to sing
+4. String Quartet Session Recording
+    - Called in to do a recording session
+    - The band they are recording for only has chords and melody
+    - The sound engineer needs a quick way to give the string quartet parts to play
+
 ## Questions to ask stakeholders
 1. Have you experienced the issue
 2. Would you use a digital tool to speed up the process
