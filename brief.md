@@ -31,7 +31,7 @@ writing ensemble parts.
     - They rehearse once each week for 1 hour
     - Drummer is band leader, and writes/organises music to play
         - Has music theory knowledge of rhythm, but no knowledge of harmony
-        - Can find lead sheets (containing melody and chords) for the pieces they play online. [Example](lead sheet)
+        - Can find lead sheets (containing melody and chords) for the pieces they play online. [Example][lead sheet]
         - This is enough for the bass, piano, guitar and drums
         - The horns (trumpet, alto saxophone, tenor saxophone and trombone) need written harmony parts in the 
         appropriate [transposition](http://music.stackexchange.com/questions/5374/what-is-a-transposing-instrument) for 
