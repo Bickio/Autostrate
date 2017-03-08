@@ -69,6 +69,7 @@ writing ensemble parts.
     - This is important for making the software usable in as many common situations as possible. If the software is 
     unsuitable for one situation, it may turn people off using it for other situations
 - It should be accessible for people with less experience
+    - For an example see scenario 2 above
 - It needs to produce high quality results
     - If users have to fix up the output of the software too much, it can be more time taking than writing from scratch. 
     This also affects the tertiary stakeholders in a major way, because if the music doesn't sound good, they will be 
