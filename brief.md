@@ -76,7 +76,7 @@ writing ensemble parts.
     unhappy. If the generated parts are hard or awkward to play that negatively affects the secondary stakeholders, 
     because they won't enjoy playing the music and therefore won't practice
 - It should be easily maintainable
-    - If the software is not easy to maintain from a development perspective, it won't be easy to develop and maintain,
+    - If the software is not easy to maintain from a development perspective, it is less likely to be maintained,
     which will in turn affect how the software can change to reflect changes in stakeholder needs and it's ability to 
     solve more issues and fill more needs/opportunities in the future.
 
