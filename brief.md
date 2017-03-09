@@ -62,14 +62,19 @@ writing ensemble parts.
 
 ## Considerations
 - The software needs to be easy to use and access
-    - If it is not easy to use, the time taken learning and using the software will make it slower than the alternative 
-    which is writing parts by hand
-- It must be quick and efficient
+    - If it is not easy to use, it won't be suitable for all the different users. It has to be accessible for non 
+    tech-savvy users including seniors and children as young as 7 or 8
+- It must be quick and efficient to use
+    - This is for the 'power users' such as sound engineers and professional composers/orchestrators. If the 
+    software isn't fast enough not to slow down the creative process, these users in particular will find it more
+    time taking than the manual alternative
 - It needs to be flexible
     - This is important for making the software usable in as many common situations as possible. If the software is 
-    unsuitable for one situation, it may turn people off using it for other situations
+    unsuitable for one situation, it may turn people off using it for other situations. There are many different 
+    creative workflows and it should be usable in as many as possible
 - It should be accessible for people with less experience
-    - For an example see scenario 2 above
+    - For an example see scenario 2 above. Many of the younger users will not have formal music training and therefore
+    they won't be able to use the software if it requires detailed knowledge.
 - It needs to produce high quality results
     - If users have to fix up the output of the software too much, it can be more time taking than writing from scratch. 
     This also affects the tertiary stakeholders in a major way, because if the music doesn't sound good, they will be 
