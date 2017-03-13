@@ -68,14 +68,13 @@ features of proprietary music notation software such as Sibelius. Neither of the
 useful. Writing voicings by hand still requires knowledge/time/experience, and most music notation software is 
 expensive and complicated to use. 
 
-To solve this issue an orchestration/voicing app will be developed. It will have features to make orchestration 
-easier such as writing a fully voiced/harmonized set of parts for a specified group of instruments from a melody 
-in a variety of forms and a chord progression.
+To solve this issue an orchestration/voicing app will be developed. It will have features to make harmonisation and
+arrangement easier.
 
 It will be flexible and suitable for use in multiple different situations, such as band rehearsals and as part 
 of the composition process. It will be accessible for different ages and levels of experience, from beginner 
 music students all the way up to professional sound engineers. It will also produce high-quality results. It 
-will also be easy to maintain from a develpment perspective.
+will also be easy to maintain from a development perspective.
 
 ## Considerations
 - The software needs to be easy to use and access
