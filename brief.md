@@ -63,18 +63,19 @@ writing ensemble parts.
 ## Conceptual statement
 
 Writing harmony parts for an ensemble is time-taking and requires a high level of music theory knowledge. If you 
-search online, the only solutions that exist are instructions for how to write voicings by hand, and a few built in 
-features of proprietary music notation software such as Sibelius. Neither of these two solutions is particularly 
+search online, the only solutions that exist are instructions for how to write voicings by hand, and a few built 
+in features of proprietary music notation software such as Sibelius. Neither of these two solutions is particularly 
 useful. Writing voicings by hand still requires knowledge/time/experience, and most music notation software is 
-expensive and complicated to use. 
+expensive and complicated to use.
 
-To solve this issue an orchestration/voicing app will be developed. It will have features to make harmonisation and
-arrangement easier.
+
+To solve this issue an orchestration/voicing app will be developed to make harmonisation and arrangement easier.
 
 It will be flexible and suitable for use in multiple different situations, such as band rehearsals and as part 
 of the composition process. It will be accessible for different ages and levels of experience, from beginner 
-music students all the way up to professional sound engineers. It will also produce high-quality results. It 
-will also be easy to maintain from a development perspective.
+music students all the way up to professional sound engineers, though it will initially target people with less 
+experience/knowledge. It will also produce high-quality results. It will also be easy to maintain from a 
+development perspective. It will be either cheap or free to suit users who can't afford expensive software.
 
 ## Considerations
 - The software needs to be easy to use and access
