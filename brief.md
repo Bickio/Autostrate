@@ -73,29 +73,49 @@ An algorithm is a set of steps and logic which provide an output from an input. 
 -   Drop the top one (apart from the melody) down one octave
 -   Distribute these three notes between the instruments in order of pitch
 
-###And how you'd use it:
+### And how you'd use it:
 #### Input:
+
 Chords  |Am|       |Bm7|Cdim|
+
 Melody |C5 |E5   | F#5 |        |
 
 #### Take the melody as the 'first' part
+
 1st part |C5    |E5    | F#5   | F#5    |
+
 #### For each note:
+
 First note: C5
+
     First 3 notes: A4, E4, C4
+
     Drop the top: A3, E4, C4
+
     Pitch order: E4, C4, A3
+
     Parts: 2: E4, 3: C4, 4: A2
+
 Second note: E5
-    Parts: Parts: 2: A4, 3: E4, 4: C3
+
+    Parts: 2: A4, 3: E4, 4: C3
+
 Third note: F#5
-    Parts: Parts: 2: B4, 3: A4, 4: D3
+
+    Parts: 2: B4, 3: A4, 4: D3
+
 Fourth note: still F#5
-    Parts: Parts: 2: C5, 3: A4, 4: D#3
+
+    Parts: 2: C5, 3: A4, 4: D#3
 
 #### Output:
+
 Chords  |Am |       |Bm7|Cdim|
+
 1st part  |C5  |E5  | F#5 | F#5  |
+
 2nd part|E4  |A4  | B4   | C5    |
+
 3rd part |C4  |E4  | A4   |  A4  |
+
 4th part |A2  |C3  | D3   | D#3 |
