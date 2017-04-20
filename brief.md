@@ -98,15 +98,15 @@ First note: C5
 
 Second note: E5
 
-    Parts: Parts: 2: A4, 3: E4, 4: C3
+    Parts: 2: A4, 3: E4, 4: C3
 
 Third note: F#5
 
-    Parts: Parts: 2: B4, 3: A4, 4: D3
+    Parts: 2: B4, 3: A4, 4: D3
 
 Fourth note: still F#5
 
-    Parts: Parts: 2: C5, 3: A4, 4: D#3
+    Parts: 2: C5, 3: A4, 4: D#3
 
 #### Output:
 
