@@ -1,108 +1,101 @@
+# Brief
 
+## Conceptual Statement
+Link to Blog: https://autostrate.blogspot.co.nz/
+Writing harmony parts for an ensemble is time-taking and requires a high level
+of music theory knowledge. If you search online, the only solutions that exist
+are instructions for how to write voicings by hand, and a few built in features
+of proprietary music notation software such as Sibelius. Neither of these two
+solutions is particularly useful. Writing voicings by hand still requires
+knowledge/time/experience, and most music notation software is expensive and
+complicated to use.
+To solve this issue an orchestration/voicing app will be developed to make
+harmonisation and arrangement easier.It will be flexible and suitable for use in
+multiple different situations, such as band rehearsals and as part of the
+composition process. It will be accessible for different ages and levels of
+experience, from beginner music students all the way up to professional sound
+engineers, though it will initially target people with less
+experience/knowledge. It will also produce high-quality results. It will also be
+easy to maintain from a development perspective. It will be either cheap or free
+to suit users who can't afford expensive software.
 
-# Brief / planning doc
+## Specifications
+### Input:
+- The app should accept input in the form of note names (e.g. "A#3") and chord
+symbols (e.g. "Fdim7+11").
+- It should display the input as sheet music, either updating in real time or on
+request.
+### Output:
+- The app should output the harmonised voicings both as note names and as sheet
+music, and should have the option to download the parts as separate PDFs and a
+PDF with all the parts (score).
+### The in between stuff:
+- The quality of the voicings should be as high as possible. For this, the user
+should be able to choose between a range of different algorithms.
+- There should be a way for users to script their own algorithms if they so
+choose.
+- The groundwork for the music theory can and should be provided by a library
+such as tonal or teoria, to save developer time.
+- As the task is not computationally expensive, the calculation should be done
+locally, but should be abstracted sufficiently for the computation to be moved
+to the cloud if necessary at a later date.
+### Backend:
+- The app should use a free real-time cloud hosted database/file storage
+service.
+- The database chosen should be quick to set up and develop (to save developer
+  time), and should be able to scale if the site requires it.
+- It should also be chosen to reflect the needs of the app, such as whether
+real-time updates from the database are required.
+### Frontend:
+- The app should use a full Javascript framework for the front end.
+- The framework should be easy to set up and develop (to save developer time) and should be easily scalable and maintainable.
+- It should have the ability to smooth over any of the UX bumps and potholes present in html/css, and provide a nice looking smooth running and fast UI for the user.
+### CSS Framework:
+- The app should use a low-level css framework (grid system). This will make it easy to get layouts up and running while the developer still has full control over the look and feel of the website.
+- The framework chosen should be as lightweight as possible to reduce load times and therefore increase user experience (page load times are one of the defining factors of website experience).
+### User Interface:
+- The UI should conform with UI design patterns to ease the user's learning curve and make the site intuitive. This is especially important as the stakeholders are not necessarily tech savvy.
+- The app should conform with the standards: https://www.w3.org/TR/html5/ and https://www.w3.org/TR/mobile-bp/
+## Broadest sense (shameless use of keyword jargon)
+Having both the note names and the sheet music is important for experienced musicians who can see at a glance whether something is wrong from the sheet music, improving the app’s usability and therefore its social acceptability.
+The ability to output in both forms is crucial for the app to be usable by people with different levels of music theory and sight-reading skills. An experienced musician would have a very hard time trying to read note names, and beginner musicians would have a hard time reading sheet music, especially if they have had no formal training. Having multiple formats helps the app to appeal to different user groups, and therefore improves the app’s social acceptability.
+The quality of the output is crucial to the lifetime of the app. If the app is initially successful, others will follow, and therefore the app will die if it cannot compete with the other apps quality-wise.
+Using existing libraries is important, as it reduces the amount of developer time spent on re-inventing the wheel. If the development team is overworked, it can be detrimental to their health and safety. Choice of framework also affects the technical acceptability, as some frameworks are more likely to introduce bugs and exploits in the code which
+Having a clean, modern and usable UI is important because if the app doesn’t have this, the user base will be restricted to only those who can brave an ugly interface or those who have no choice. This clearly diminishes the outcome’s social acceptability.
+## Appendix: Clarification of an algorithm
+An algorithm is a set of steps and logic which provide an output from an input. In this case the input is a melody and chords and the output is a set of parts for a group of instruments.
+### Here is an example of an algorithm:
+#### Name: 4-part Drop-2
+#### Steps:
+- Take the melody as the 'first' part
+- For each note in the melody:
+-   The highest 3 notes in the chord below the melody
+-   Drop the top one (apart from the melody) down one octave
+-   Distribute these three notes between the instruments in order of pitch
 
-## Issue
-Writing harmony parts to accompany a melody which fit a chord progression is time-taking and requires a medium level of 
-music theory knowledge. Many people I have talked to, and myself, have trouble writing harmony even when rhythmic and 
-melodic concepts are not an issue. This is often because the person needing to write the harmonies doesn't play a 
-chordal instrument and so can't easily hear the sounds in their head. When composing and arranging music, I spend lots 
-of time going back and forth listening and then adjusting, which can be time-consuming and more importantly can end up 
-with bad sounding results. This is particularly relevant when writing parts a short time before a rehearsal or even 
-during a rehearsal and you have no way listening to the sound without disturbing others around you. Currently there is 
-no perfect solution available. If you search online, the only solutions that exist are instructions for how to write 
-voicings by hand, and a few built in features of proprietary music notation software such as sibelius. Neither of these 
-two solutions is particularly useful. Writing voicings by hand still requires knowledge/time/experience, and most music 
-notation software is expensive and complicated to use.
+###And how you'd use it:
+#### Input:
+Chords  |Am|       |Bm7|Cdim|
+Melody |C5 |E5   | F#5 |        |
 
-There is an opportunity here to create a piece of software designed to automate the process of writing orchestrations.
+#### Take the melody as the 'first' part
+1st part |C5    |E5    | F#5   | F#5    |
+#### For each note:
+First note: C5
+    First 3 notes: A4, E4, C4
+    Drop the top: A3, E4, C4
+    Pitch order: E4, C4, A3
+    Parts: 2: E4, 3: C4, 4: A2
+Second note: E5
+    Parts: Parts: 2: A4, 3: E4, 4: C3
+Third note: F#5
+    Parts: Parts: 2: B4, 3: A4, 4: D3
+Fourth note: still F#5
+    Parts: Parts: 2: C5, 3: A4, 4: D#3
 
-## Stakeholders
-- The main stakeholder (direct user) of the software is the composer, arranger or band/section leader who is tasked with 
-writing ensemble parts. 
-- The secondary stakeholders of the software are the musicians who will have to play the music. 
-- Other stakeholders are people who will listen to the music, or interact with the music in some way.
-
-### Further explaination of how different stakeholders in different contexts may experience the issue
-
-#### Scenarios:
-1. Medium sized jazz band
-    - Instruments: bass, piano, guitar, drums, trumpet, alto saxophone, tenor saxophone and trombone.
-    - They rehearse once each week for 1 hour
-    - Drummer is band leader, and writes/organises music to play
-        - Has music theory knowledge of rhythm, but no knowledge of harmony
-        - Can find lead sheets (containing melody and chords) for the pieces they play online. [Example][lead sheet]
-        - This is enough for the bass, piano, guitar and drums
-        - The horns (trumpet, alto saxophone, tenor saxophone and trombone) need written harmony parts in the 
-        appropriate [transposition](http://music.stackexchange.com/questions/5374/what-is-a-transposing-instrument) for 
-        the instrument
-        - The drummer lacks the music theory knowledge to do this and the other band members are all working full time 
-        and have no time to do this
-2. Small school pop band
-    - Instruments: Drums, Bass, Rhythm Guitar and vocals, Lead guitar and vocals, Lead vocals
-    - The Drums, Bass, 2 Guitars and lead vocalist have learnt the songs by ear
-    - The band wants to add some cool backup vocal harmonies
-    - None of them have music theory training
-    - They know the chords and can work out the notes of the melody, but rhythm notation is beyond their capabilities
-    - The singers have tried to come up with harmonies on thier own, but they don't fit with the chords of the song
-3. A cappella vocal quartet
-    - Instruments: Soprano, Alto, Tenor and Bass voices
-    - They all work full time and need a quick way to write out parts for songs they want to sing
-4. String Quartet Session Recording
-    - Called in to do a recording session
-    - The band they are recording for only has chords and melody
-    - The sound engineer needs a quick way to give the string quartet parts to play
-
-## Questions to ask stakeholders
-1. Have you experienced the issue
-2. Would you use a digital tool to speed up the process
-3. What are the most important/useful features to have in such a product
-4. What should I consider when designing making the product
-5. What would you use it for and in what environment
-
-## Conceptual statement
-
-Writing harmony parts for an ensemble is time-taking and requires a high level of music theory knowledge. If you 
-search online, the only solutions that exist are instructions for how to write voicings by hand, and a few built 
-in features of proprietary music notation software such as Sibelius. Neither of these two solutions is particularly 
-useful. Writing voicings by hand still requires knowledge/time/experience, and most music notation software is 
-expensive and complicated to use.
-
-
-To solve this issue an orchestration/voicing app will be developed to make harmonisation and arrangement easier.
-
-It will be flexible and suitable for use in multiple different situations, such as band rehearsals and as part 
-of the composition process. It will be accessible for different ages and levels of experience, from beginner 
-music students all the way up to professional sound engineers, though it will initially target people with less 
-experience/knowledge. It will also produce high-quality results. It will also be easy to maintain from a 
-development perspective. It will be either cheap or free to suit users who can't afford expensive software.
-
-## Considerations
-- The software needs to be easy to use and access
-    - If it is not easy to use, it won't be suitable for all the different users. It has to be accessible for non 
-    tech-savvy users including seniors and children as young as 7 or 8
-- It must be quick and efficient to use
-    - This is for the 'power users' such as sound engineers and professional composers/orchestrators. If the 
-    software isn't fast enough not to slow down the creative process, these users in particular will find it more
-    time taking than the manual alternative
-- It needs to be flexible
-    - This is important for making the software usable in as many common situations as possible. If the software is 
-    unsuitable for one situation, it may turn people off using it for other situations. There are many different 
-    creative workflows and it should be usable in as many as possible
-- It should be accessible for people with less experience
-    - For an example see scenario 2 above. Many of the younger users will not have formal music training and therefore
-    they won't be able to use the software if it requires detailed knowledge.
-- It needs to produce high quality results
-    - If users have to fix up the output of the software too much, it can be more time taking than writing from scratch. 
-    This also affects the tertiary stakeholders in a major way, because if the music doesn't sound good, they will be 
-    unhappy. If the generated parts are hard or awkward to play that negatively affects the secondary stakeholders, 
-    because they won't enjoy playing the music and therefore won't practice
-- It should be easily maintainable
-    - If the software is not easy to maintain from a development perspective, it is less likely to be maintained,
-    which will in turn affect how the software can change to reflect changes in stakeholder needs and it's ability to 
-    solve more issues and fill more needs/opportunities in the future.
-
-## Specifications:
-
-
-[lead sheet]: http://www.piano-ology.com/JazzSchool/Images/LeadSheetExamples/AutumnLeaves.gif "Lead sheet example"
+#### Output:
+Chords  |Am |       |Bm7|Cdim|
+1st part  |C5  |E5  | F#5 | F#5  |
+2nd part|E4  |A4  | B4   | C5    |
+3rd part |C4  |E4  | A4   |  A4  |
+4th part |A2  |C3  | D3   | D#3 |
