@@ -7,7 +7,7 @@
          v-for="note in notes">
       <div class="card" style="height: 38px">
        <div class="card-block" style="padding: 8px 12px; height: 20px">
-         <p>{{ note.toUpperCase() }}</p>
+         <p>{{ note }}</p>
        </div>
      </div>
     </div>

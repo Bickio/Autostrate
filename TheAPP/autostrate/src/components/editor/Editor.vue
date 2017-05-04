@@ -7,8 +7,6 @@
       <app-output-row :notes="instrument.notes"
                       :name="instrument.name"></app-output-row>
     </div>
-
-
     <hr>
     <input type="text" v-model="melody[0]">
     <input type="text" v-model="chords[0]">
@@ -25,11 +23,12 @@ export default {
   },
   data () {
     return {
-      melody: ['', ''],
-      chords: ['', ''],
+      melody: ['', '', ''],
+      chords: ['', '', ''],
       instruments: [
-        {name: 'Trumpet', notes: ['a', 'd']},
-        {name: 'Trombone', notes: ['a', 'd']}
+        {name: 'Trumpet', notes: ['A', 'D', 'F#']},
+        {name: 'Alto Sax', notes: ['Db', 'A', 'C#']},
+        {name: 'Trombone', notes: ['A', 'D', 'Bb']}
       ]
     }
   }
