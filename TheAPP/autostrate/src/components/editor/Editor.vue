@@ -1,25 +1,25 @@
 <template lang="html">
   <div class="container">
-    <app-input-row v-model="melody" name="Melody"></app-input-row>
-    <app-input-row v-model="chords" name="Chords"></app-input-row>
+      <app-input-row v-model="melody" name="Melody"></app-input-row>
+      <app-input-row v-model="chords" name="Chords"></app-input-row>
     <hr>
-    <div v-for="instrument in instruments">
-      <app-output-row :notes="instrument.notes"
-                      :name="instrument.name"></app-output-row>
+    <div v-for="i in instruments.length">
+      <app-instrument v-model="instruments[i-1]"></app-instrument>
     </div>
     <hr>
-    <input type="text" v-model="melody[0]">
-    <input type="text" v-model="chords[0]">
+    <div>
+      <button type="button" name="button" @click="addBar()">Add Bar</button>
+    </div>
   </div>
 </template>
 
 <script>
 import InputRow from './InputRow'
-import OutputRow from './OutputRow'
+import Instrument from './Instrument'
 export default {
   components: {
     appInputRow: InputRow,
-    appOutputRow: OutputRow
+    appInstrument: Instrument
   },
   data () {
     return {
@@ -30,6 +30,15 @@ export default {
         {name: 'Alto Sax', notes: ['Db', 'A', 'C#']},
         {name: 'Trombone', notes: ['A', 'D', 'Bb']}
       ]
+    }
+  },
+  methods: {
+    addBar () {
+      this.melody.push('')
+      this.chords.push('')
+      for (let i in this.instruments) {
+        this.instruments[i].notes.push('')
+      }
     }
   }
 }
