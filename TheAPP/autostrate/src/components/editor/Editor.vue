@@ -1,45 +1,43 @@
 <template lang="html">
   <div class="container">
-      <app-input-row v-model="melody" name="Melody"></app-input-row>
-      <app-input-row v-model="chords" name="Chords"></app-input-row>
-    <hr>
-    <div v-for="i in instruments.length">
-      <app-instrument v-model="instruments[i-1]"></app-instrument>
-    </div>
-    <hr>
-    <div>
-      <button type="button" name="button" @click="addBar()">Add Bar</button>
+    <div class="d-flex">
+      <app-column :bar="bars[0]"></app-column>
     </div>
   </div>
 </template>
 
 <script>
-import InputRow from './InputRow'
-import Instrument from './Instrument'
+import Headers from './Headers'
+import Column from './Column'
+import Box from './Box'
+import { mapGetters } from 'vuex'
+import store from '../../store/index'
 export default {
-  components: {
-    appInputRow: InputRow,
-    appInstrument: Instrument
-  },
   data () {
     return {
-      melody: ['', '', ''],
-      chords: ['', '', ''],
-      instruments: [
-        {name: 'Trumpet', notes: ['A', 'D', 'F#']},
-        {name: 'Alto Sax', notes: ['Db', 'A', 'C#']},
-        {name: 'Trombone', notes: ['A', 'D', 'Bb']}
-      ]
+      project: 1
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'getProject'
+    ]),
+    name () {
+      return this.getProject(this.project).name
+    },
+    bars () {
+      return this.getProject(this.project).bars
     }
   },
   methods: {
-    addBar () {
-      this.melody.push('')
-      this.chords.push('')
-      for (let i in this.instruments) {
-        this.instruments[i].notes.push('')
-      }
+    changeName (name) {
+      store.dispatch('changeName', [this.project, name])
     }
+  },
+  components: {
+    appHeaders: Headers,
+    appColumn: Column,
+    appBox: Box
   }
 }
 </script>
