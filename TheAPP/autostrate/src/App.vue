@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <h1 style="text-align: center; background-color: grey">Header</h1>
+    <app-header></app-header>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Header from './components/Header.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    appHeader: Header
+  }
 }
 </script>
 
 <style>
-
 </style>

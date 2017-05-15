@@ -1,21 +1,20 @@
 <template lang="html">
-  <div>
-    <app-box editable :value="bar.melody">Melody</app-box>
-    <app-box editable :value="bar.chord">Chords</app-box>
-    <hr>
-    <app-box>Instr1</app-box>
-    <app-box>Instr2</app-box>
+<div class="column is-1">
+  <div class="thing">
+    {{ column.id }}
   </div>
+
+</div>
 </template>
 
 <script>
-import Box from './Box'
 export default {
-  props: ['bar'],
-  components: {
-    appBox: Box
-  }
+  props: ['column']
 }
 </script>
-<style lang="css" scoped>
+
+<style lang="css">
+.thing {
+  background-color: blue;
+}
 </style>

@@ -1,43 +1,32 @@
 <template lang="html">
   <div class="container">
-    <div class="d-flex">
-      <app-column :bar="bars[0]"></app-column>
+    <h1 class="title is-1">{{ currentProjectID }}</h1>
+    <div class="columns is-multiline">
+      <div v-for="column in columns">
+        <app-column :column="column"></app-column>
+      </div>
     </div>
+    {{ columns }}
+    <button type="button" name="button" @click="addColumn">Add Column</button>
   </div>
 </template>
 
 <script>
-import Headers from './Headers'
 import Column from './Column'
-import Box from './Box'
 import { mapGetters } from 'vuex'
-import store from '../../store/index'
+
 export default {
-  data () {
-    return {
-      project: 1
-    }
-  },
-  computed: {
-    ...mapGetters([
-      'getProject'
-    ]),
-    name () {
-      return this.getProject(this.project).name
-    },
-    bars () {
-      return this.getProject(this.project).bars
-    }
-  },
-  methods: {
-    changeName (name) {
-      store.dispatch('changeName', [this.project, name])
-    }
-  },
   components: {
-    appHeaders: Headers,
-    appColumn: Column,
-    appBox: Box
+    'app-column': Column
+  },
+  computed: mapGetters([
+    'currentProjectID',
+    'columns'
+  ]),
+  methods: {
+    addColumn () {
+      this.$store.commit('addColumn', this.currentProjectID)
+    }
   }
 }
 </script>
