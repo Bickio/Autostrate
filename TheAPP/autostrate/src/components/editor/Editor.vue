@@ -1,11 +1,16 @@
 <template lang="html">
   <div class="container">
-    <h1 class="title">{{ name }}</h1>
+    <h1 class="title is-1">{{ name }}</h1>
     <div class="columns is-multiline is-gapless">
       <app-headers></app-headers>
       <app-column v-for="(column, key) in columns" key="id" @input="updateColumn(key)" v-model="columns[key]"></app-column>
       <div class="column is-1">
-        <button type="button" name="button" class="button is-primary" @click="addColumn">Add Column</button>
+        <button type="button"
+                name="button"
+                class="button"
+                @click="addColumn"
+                style="width: 100%; height: 132px;">Add</button>
+        <hr>
       </div>
     </div>
   </div>
