@@ -4,14 +4,7 @@
     <div class="columns is-multiline is-gapless">
       <app-headers></app-headers>
       <app-column v-for="(column, key) in columns" key="id" @input="updateColumn(key)" v-model="columns[key]"></app-column>
-      <div class="column is-1">
-        <button type="button"
-                name="button"
-                class="button"
-                @click="addColumn"
-                style="width: 100%; height: 132px;">Add</button>
-        <hr>
-      </div>
+      <app-add-bar @addColumn="addColumn"/>
     </div>
   </div>
 </template>
@@ -20,11 +13,13 @@
 import Column from './Column'
 import { mapGetters } from 'vuex'
 import ColumnHeaders from './ColumnHeaders'
+import AddBar from './AddBar'
 
 export default {
   components: {
     'app-column': Column,
-    'app-headers': ColumnHeaders
+    'app-headers': ColumnHeaders,
+    'app-add-bar': AddBar
   },
   computed: mapGetters([
     'currentProjectID',
