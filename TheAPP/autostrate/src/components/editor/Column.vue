@@ -14,21 +14,13 @@
              @input="updateProperty('melody', $event.target.value)">
     </p>
   </div>
-  <div class="field">
-    <p class="control">
-      <span class="select" style="width: 100%;">
-        <select style="width: 100%;">
-          <option>Rule</option>
-          <option>drop-2</option>
-        </select>
-      </span>
-    </p>
-  </div>
+  <app-rule-dropdown/>
   <hr>
 </div>
 </template>
 
 <script>
+import RuleDropdown from './RuleDropdown'
 export default {
   props: {
     value: Object
@@ -38,6 +30,9 @@ export default {
       this.value[property] = value
       this.$emit('input', this.value)
     }
+  },
+  components: {
+    'app-rule-dropdown': RuleDropdown
   }
 }
 </script>
