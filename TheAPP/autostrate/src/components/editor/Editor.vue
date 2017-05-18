@@ -1,23 +1,25 @@
 <template lang="html">
   <div class="container">
-    <h1 class="title is-1">{{ currentProjectID }}</h1>
-    <div class="columns is-multiline">
-      <div v-for="column in columns">
-        <app-column :column="column"></app-column>
+    <h1 class="title">{{ currentProjectID }}</h1>
+    <div class="columns is-multiline is-gapless">
+      <app-column v-for="(column, key) in columns" key="id" @input="updateColumn(key)" v-model="columns[key]"></app-column>
+      <div class="column is-1">
+        <button type="button" name="button" class="button is-primary" @click="addColumn">Add Column</button>
       </div>
+
     </div>
-    {{ columns }}
-    <button type="button" name="button" @click="addColumn">Add Column</button>
   </div>
 </template>
 
 <script>
 import Column from './Column'
 import { mapGetters } from 'vuex'
+import ColumnHeaders from './ColumnHeaders'
 
 export default {
   components: {
-    'app-column': Column
+    'app-column': Column,
+    'app-headers': ColumnHeaders
   },
   computed: mapGetters([
     'currentProjectID',
@@ -26,6 +28,11 @@ export default {
   methods: {
     addColumn () {
       this.$store.commit('addColumn', this.currentProjectID)
+    },
+    updateColumn (key) {
+      let projectID = this.currentProjectID
+      let column = this.columns[key]
+      this.$store.commit('updateColumn', [projectID, key, column])
     }
   }
 }

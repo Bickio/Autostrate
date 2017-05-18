@@ -9,6 +9,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     currentProjectID: 'test',
+    defaultRule: 'drop-2',
     projects: {
       /*
       id: {

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="title is-1 center hero">Home</h1>
+    <h1 class="title is-1 center hero">Welcome to AUTOSTRATE!!!</h1>
   </div>
 
 </template>

@@ -1,12 +1,18 @@
+import Vue from 'vue'
+
 export default {
   addColumn (state, projectId) {
     let timestamp = Date.now()
     let id = 'c_' + timestamp
-    state.projects[projectId].columns[id] = {
+    let column = {
       id,
-      chord: 'test_chord',
+      chord: '',
       melody: '',
-      rule: ''
+      rule: state.defaultRule
     }
+    Vue.set(state.projects[projectId].columns, id, column)
+  },
+  updateColumn (state, [projectId, key, column]) {
+    state.projects[projectId].columns[key] = column
   }
 }
