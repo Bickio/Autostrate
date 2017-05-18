@@ -16,14 +16,15 @@
   </div>
   <div class="field">
     <p class="control">
-      <span class="select">
-        <select>
+      <span class="select" style="width: 100%;">
+        <select style="width: 100%;">
           <option>Rule</option>
-          <option>drop-2blah</option>
+          <option>drop-2</option>
         </select>
       </span>
     </p>
   </div>
+  <hr>
 </div>
 </template>
 
