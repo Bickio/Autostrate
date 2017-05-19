@@ -22,18 +22,22 @@ export default {
     'app-add-bar': AddBar
   },
   computed: mapGetters([
-    'currentProjectID',
+    'currentProjectId',
     'columns',
     'name'
   ]),
   methods: {
     addColumn () {
-      this.$store.commit('addColumn', this.currentProjectID)
+      this.$store.commit('addColumn', this.currentProjectId)
     },
     updateColumn (key) {
-      let projectID = this.currentProjectID
+      let projectId = this.currentProjectId
       let column = this.columns[key]
-      this.$store.commit('updateColumn', [projectID, key, column])
+      this.$store.commit('updateColumn', [projectId, key, column])
+    },
+    updateDefaultRule (rule) {
+      let projectId = this.currentProjectId
+      this.store.commit('updateDefaultRule', [projectId, rule])
     }
   }
 }

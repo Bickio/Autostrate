@@ -20,7 +20,7 @@ export default {
   props: ['value'],
   methods: {
     update (value) {
-      this.$emit('input', this.rules[value])
+      this.$emit('input', this.rules[value].id)
     }
   },
   computed: {

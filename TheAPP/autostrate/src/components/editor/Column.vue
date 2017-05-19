@@ -15,7 +15,7 @@
     </p>
   </div>
   <app-rule-dropdown :value="value.rule"
-                     @input="updateProperty('rule', $event.id)">
+                     @input="updateProperty('rule', $event)">
   </app-rule-dropdown>
   <hr>
 </div>

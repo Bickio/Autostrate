@@ -14,5 +14,8 @@ export default {
   },
   updateColumn (state, [projectId, key, column]) {
     state.projects[projectId].columns[key] = column
+  },
+  updateProjectDefaultRule (state, [projectId, rule]) {
+    state.projects[projectId].default_rule = rule
   }
 }

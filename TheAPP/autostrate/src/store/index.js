@@ -8,7 +8,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    currentProjectID: 'test',
+    current_project_id: 'test',
     rules: {
       /*
       id: {
