@@ -56,7 +56,7 @@ export default new Vuex.Store({
       */
       test: {
         id: 'test',
-        name: 'boaty mcboatface',
+        name: 'Boaty McBoatface',
         key: 'A major',
         default_rule: 'r_54321',
         instruments: {
