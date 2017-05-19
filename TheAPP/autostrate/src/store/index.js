@@ -17,6 +17,16 @@ export default new Vuex.Store({
         rule function
       }
       */
+      r_12345: {
+        id: 'r_12345',
+        name: 'test',
+        rule: 'placeholder'
+      },
+      r_54321: {
+        id: 'r_54321',
+        name: 'drop 2',
+        rule: 'placeholder'
+      }
     },
     default_rule: 'r_12345',
     projects: {
