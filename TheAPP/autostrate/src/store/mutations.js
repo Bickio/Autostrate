@@ -8,7 +8,7 @@ export default {
       id,
       chord: '',
       melody: '',
-      rule: state.defaultRule
+      rule: state.projects[projectId].default_rule
     }
     Vue.set(state.projects[projectId].columns, id, column)
   },

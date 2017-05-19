@@ -18,7 +18,7 @@ export default new Vuex.Store({
       }
       */
     },
-    defaultRule: 'drop-2',
+    default_rule: 'r_12345',
     projects: {
       /*
       id: {
@@ -48,7 +48,7 @@ export default new Vuex.Store({
         id: 'test',
         name: 'boaty mcboatface',
         key: 'A major',
-        default_rule: 'in the land of mules',
+        default_rule: 'r_54321',
         instruments: {
           test_instrument_id: {
             id: 'test_instrument_id',
