@@ -1,5 +1,12 @@
 <template lang="html">
 <div class="column is-1">
+  <div class="field has-text-centered">
+    <a class="button is-danger is-outlined">
+      <span class="icon is-small">
+        <i class="fa fa-times"></i>
+      </span>
+    </a>
+  </div>
   <div class="field">
     <p class="control">
       <input class="input"

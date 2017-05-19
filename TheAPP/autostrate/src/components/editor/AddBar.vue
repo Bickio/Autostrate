@@ -4,7 +4,7 @@
             name="button"
             class="button"
             @click="addColumn"
-            style="width: 100%; height: 132px;">Add</button>
+            style="width: 100%; height: calc(100% - 49px);">Add</button>
     <hr>
   </div>
 </template>

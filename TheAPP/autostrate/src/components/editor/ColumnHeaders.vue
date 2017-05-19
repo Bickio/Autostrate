@@ -1,13 +1,16 @@
 <template lang="html">
 <div class="column is-2">
   <div class="field">
+    <br class="title">
+  </div>
+  <div class="field">
     <h1 class="title">Chords</h1>
   </div>
   <div class="field">
     <h1 class="title">Melody</h1>
   </div>
-  <div class="columns">
-    <div class="column field">
+  <div class="columns is-gapless field" style="margin-bottom: 0;">
+    <div class="column">
       <h1 class="title">Rule</h1>
     </div>
     <app-rule-dropdown class="column"
@@ -15,7 +18,7 @@
                        @input="updateProjectDefaultRule($event)">
     </app-rule-dropdown>
   </div>
-
+  <hr>
 </div>
 </template>
 
