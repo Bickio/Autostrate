@@ -1,5 +1,5 @@
 <template lang="html">
-<div class="column is-2">
+<div class="column is-2" style="padding-right: 20px;">
   <div class="field">
     <br class="title">
   </div>
