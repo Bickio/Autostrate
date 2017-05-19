@@ -15,6 +15,9 @@ export default {
   updateColumn (state, [projectId, key, column]) {
     state.projects[projectId].columns[key] = column
   },
+  removeColumn (state, [projectId, columnId]) {
+    Vue.delete(state.projects[projectId].columns, columnId)
+  },
   updateProjectDefaultRule (state, [projectId, rule]) {
     state.projects[projectId].default_rule = rule
   }

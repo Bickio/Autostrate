@@ -1,7 +1,7 @@
 <template lang="html">
 <div class="column is-1">
   <div class="field has-text-centered">
-    <a class="button is-danger is-outlined">
+    <a class="button is-danger is-outlined" @click="remove">
       <span class="icon is-small">
         <i class="fa fa-times"></i>
       </span>
@@ -38,6 +38,9 @@ export default {
     updateProperty (property, value) {
       this.value[property] = value
       this.$emit('input', this.value)
+    },
+    remove () {
+      this.$emit('remove', this.value.id)
     }
   },
   components: {

@@ -3,7 +3,11 @@
     <h1 class="title is-1">{{ name }}</h1>
     <div class="columns is-multiline is-gapless">
       <app-headers></app-headers>
-      <app-column v-for="(column, key) in columns" key="id" @input="updateColumn(key)" v-model="columns[key]"></app-column>
+      <app-column v-for="(column, key) in columns"
+                  key="id"
+                  @input="updateColumn(key)"
+                  @remove="removeColumn"
+                  v-model="columns[key]"></app-column>
       <app-add-bar @addColumn="addColumn"/>
     </div>
   </div>
@@ -34,6 +38,10 @@ export default {
       let projectId = this.currentProjectId
       let column = this.columns[key]
       this.$store.commit('updateColumn', [projectId, key, column])
+    },
+    removeColumn (id) {
+      let projectId = this.currentProjectId
+      this.$store.commit('removeColumn', [projectId, id])
     },
     updateDefaultRule (rule) {
       let projectId = this.currentProjectId
