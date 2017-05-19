@@ -14,7 +14,9 @@
              @input="updateProperty('melody', $event.target.value)">
     </p>
   </div>
-  <app-rule-dropdown/>
+  <app-rule-dropdown :value="value.rule"
+                     @input="updateProperty('rule', $event.id)">
+  </app-rule-dropdown>
   <hr>
 </div>
 </template>
