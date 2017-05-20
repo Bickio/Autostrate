@@ -36,6 +36,7 @@ export default new Vuex.Store({
         name,
         key,
         default_rule,
+        instrument_order: [],
         instruments: {
           id: {
             id,
@@ -60,13 +61,8 @@ export default new Vuex.Store({
         name: 'Boaty McBoatface',
         key: 'A major',
         default_rule: 'r_54321',
+        instrument_order: [],
         instruments: {
-          test_instrument_id: {
-            id: 'test_instrument_id',
-            name: 'trumpet',
-            key: 'Bb',
-            clef: 'treble'
-          }
         },
         column_order: [],
         columns: {

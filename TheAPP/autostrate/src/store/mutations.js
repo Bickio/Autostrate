@@ -26,5 +26,24 @@ export default {
   },
   updateProjectDefaultRule (state, [projectId, rule]) {
     state.projects[projectId].default_rule = rule
+  },
+  addInstrument (state, projectId) {
+    let timestamp = Date.now()
+    let id = 'i_' + timestamp
+    let instrument = {
+      id,
+      name: '',
+      key: 'C'
+    }
+    Vue.set(state.projects[projectId].instruments, id, instrument)
+    state.projects[projectId].instrument_order.push(id)
+  },
+  updateInstrumentProperty (state, [projectId, instrumentId, property, value]) {
+    state.projects[projectId].instruments[instrumentId][property] = value
+  },
+  removeInstrument (state, [projectId, instrumentId]) {
+    Vue.delete(state.projects[projectId].instruments, instrumentId)
+    var index = state.projects[projectId].instrument_order.indexOf(instrumentId)
+    Vue.delete(state.projects[projectId].instrument_order, index)
   }
 }

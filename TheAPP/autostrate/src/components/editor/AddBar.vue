@@ -5,9 +5,9 @@
     </div>
     <button type="button"
             name="button"
-            class="button"
+            class="button is-primary is-outlined"
             @click="addColumn"
-            style="width: 100%; height: 132px">Add</button>
+            style="width: 100%; height: 132px; margin-bottom: 12px;">Add</button>
     <hr>
   </div>
 </template>

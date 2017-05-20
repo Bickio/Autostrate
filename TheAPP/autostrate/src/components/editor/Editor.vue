@@ -5,7 +5,7 @@
     <div class="columns is-multiline is-gapless">
       <app-column-headers></app-column-headers>
       <app-column v-for="(id, index) in columnOrder"
-                  key="index"
+                  :key="index"
                   @input="updateColumn(id)"
                   @remove="removeColumn"
                   v-model="columns[id]"></app-column>

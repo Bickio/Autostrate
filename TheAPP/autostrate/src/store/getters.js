@@ -16,3 +16,5 @@ export const columnOrder = (state, getters) =>
 
 export const instruments = (state, getters) =>
                            state.projects[getters.currentProjectId].instruments
+export const instrumentOrder = (state, getters) =>
+                               state.projects[getters.currentProjectId].instrument_order

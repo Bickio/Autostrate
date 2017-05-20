@@ -24,7 +24,7 @@
   <app-rule-dropdown :value="value.rule"
                      @input="updateProperty('rule', $event)">
   </app-rule-dropdown>
-  <hr>
+  <hr style="margin-top: 36px;">
 </div>
 </template>
 
