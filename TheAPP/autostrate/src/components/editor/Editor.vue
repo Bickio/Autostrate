@@ -3,11 +3,11 @@
     <h1 class="title is-1">{{ name }}</h1>
     <div class="columns is-multiline is-gapless">
       <app-headers></app-headers>
-      <app-column v-for="(column, key) in columns"
-                  key="id"
-                  @input="updateColumn(key)"
+      <app-column v-for="(id, index) in columnOrder"
+                  key="index"
+                  @input="updateColumn(id)"
                   @remove="removeColumn"
-                  v-model="columns[key]"></app-column>
+                  v-model="columns[id]"></app-column>
       <app-add-bar @addColumn="addColumn"/>
     </div>
   </div>
@@ -28,6 +28,7 @@ export default {
   computed: mapGetters([
     'currentProjectId',
     'columns',
+    'columnOrder',
     'name'
   ]),
   methods: {

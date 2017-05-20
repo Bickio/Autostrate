@@ -44,6 +44,7 @@ export default new Vuex.Store({
             clef
           }
         },
+        column_list: [id, id...]
         columns: {
           id: {
             id,
@@ -67,6 +68,7 @@ export default new Vuex.Store({
             clef: 'treble'
           }
         },
+        column_order: [],
         columns: {
         }
       }
