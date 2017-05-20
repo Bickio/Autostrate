@@ -1,6 +1,9 @@
 import Vue from 'vue'
 
 export default {
+  updateProjectProperty (state, [projectId, property, value]) {
+    state.projects[projectId][property] = value
+  },
   addColumn (state, projectId) {
     let timestamp = Date.now()
     let id = 'c_' + timestamp
