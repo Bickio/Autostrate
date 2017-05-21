@@ -25,6 +25,10 @@
                      @input="updateProperty('rule', $event)">
   </app-rule-dropdown>
   <hr style="margin-top: 36px;">
+  <div style="margin-bottom: 24px; height: 45px;"
+       v-for="instrumentOutput in instrumentOutputs">
+    <h2 class="title has-text-centered">{{ instrumentOutput }}</h2>
+  </div>
 </div>
 </template>
 
@@ -32,7 +36,8 @@
 import RuleDropdown from './RuleDropdown'
 export default {
   props: {
-    value: Object
+    value: Object,
+    instrumentOutputs: Object
   },
   methods: {
     updateProperty (property, value) {
