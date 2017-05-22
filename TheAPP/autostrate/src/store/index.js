@@ -17,11 +17,6 @@ export default new Vuex.Store({
         rule function
       }
       */
-      r_12345: {
-        id: 'r_12345',
-        name: 'test',
-        rule: 'placeholder'
-      },
       r_54321: {
         id: 'r_54321',
         name: 'drop 2',
@@ -58,8 +53,8 @@ export default new Vuex.Store({
       */
       test: {
         id: 'test',
-        name: 'Boaty McBoatface',
-        key: 'A major',
+        name: '',
+        key: '',
         default_rule: 'r_54321',
         instrument_order: [],
         instruments: {
