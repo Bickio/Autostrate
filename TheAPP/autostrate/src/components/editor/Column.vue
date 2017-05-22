@@ -53,7 +53,11 @@ export default {
       return api.isValidNote(this.value.melody)
     },
     outputs () {
-      return api.voicing(this.value.chord, this.value.melody, this.value.rule)
+      let chord = this.value.chord
+      let melody = this.value.melody
+      let rule = this.value.rule
+      let instruments = this.instruments
+      return api.voicing(chord, melody, rule, instruments)
     }
   },
   methods: {

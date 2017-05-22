@@ -18,10 +18,11 @@ api.isValidNote = function (note) {
   return !!t.note.name(note)
 }
 
-api.voicing = function (chord, melody, rule) {
+api.voicing = function (chord, melody, rule, instruments) {
+  let numberOfInstruments = instruments.keys().length
   // Check for an empty field
   if (!chord || !melody) {
-    return Array(10).fill('')
+    return Array(numberOfInstruments).fill('')
   }
   return api.rules[rule].makeVoicing(chord, melody)
 }
