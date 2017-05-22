@@ -10,6 +10,7 @@
   <div class="field">
     <p class="control">
       <input class="input"
+             :class="{ 'is-danger': !isValidChord }"
              :value="value.chord"
              @input="updateProperty('chord', $event.target.value)">
     </p>
@@ -34,10 +35,17 @@
 
 <script>
 import RuleDropdown from './RuleDropdown'
+import api from '../../api/index'
+
 export default {
   props: {
     value: Object,
     instrumentOutputs: Object
+  },
+  computed: {
+    isValidChord () {
+      return api.isValidChord(this.value.chord)
+    }
   },
   methods: {
     updateProperty (property, value) {
