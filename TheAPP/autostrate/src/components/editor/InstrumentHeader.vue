@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="columns is-gapless">
+  <div class="columns is-mobile is-gapless">
     <div class="column is-narrow field has-text-centered">
       <a class="button is-danger is-outlined is-medium" @click="remove">
         <span class="icon is-small">

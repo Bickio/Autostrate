@@ -2,7 +2,7 @@
   <div class="container">
     <br>
     <app-meta></app-meta>
-    <div class="columns is-multiline is-gapless">
+    <div class="columns is-mobile is-multiline is-gapless">
       <app-column-headers></app-column-headers>
       <app-column v-for="(id, index) in columnOrder"
                   :key="index"

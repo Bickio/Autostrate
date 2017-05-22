@@ -1,15 +1,18 @@
 <template lang="html">
-<div class="column is-3" style="padding-right: 20px;">
-  <div class="field">
+<div class="column is-12-mobile
+                   is-one-third-tablet
+                   is-one-quarter-desktop"
+     style="padding-right: 20px;">
+  <div class="field is-hidden-mobile">
     <br class="title">
   </div>
-  <div class="field">
+  <div class="field is-hidden-mobile">
     <h1 class="title">Chords</h1>
   </div>
-  <div class="field">
+  <div class="field is-hidden-mobile">
     <h1 class="title">Melody</h1>
   </div>
-  <div class="columns is-gapless field" style="margin-bottom: 13px;">
+  <div class="columns is-mobile is-gapless field" style="margin-bottom: 13px;">
     <div class="column">
       <h1 class="title">Rule</h1>
     </div>

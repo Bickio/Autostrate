@@ -1,5 +1,7 @@
 <template lang="html">
-<div class="column is-1">
+<div class="column is-1-desktop 
+                   is-2-tablet
+                   is-3-mobile">
   <div class="field has-text-centered">
     <a class="button is-danger is-outlined" @click="remove">
       <span class="icon is-small">
