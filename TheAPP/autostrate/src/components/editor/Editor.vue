@@ -8,9 +8,8 @@
                   :key="index"
                   @input="updateColumn(id)"
                   @remove="removeColumn"
-                  v-model="columns[id]"
-                  :instrumentOutputs="instrumentOutputs[id]"></app-column>
-      <app-add-bar @addColumn="addColumn"/>
+                  v-model="columns[id]"></app-column>
+      <app-add-bar @addColumn="addColumn"></app-add-bar>
     </div>
   </div>
 </template>
@@ -26,7 +25,6 @@ export default {
   computed: {
     ...mapGetters([
       'currentProjectId',
-      'instrumentOutputs',
       'columns',
       'columnOrder'
     ])

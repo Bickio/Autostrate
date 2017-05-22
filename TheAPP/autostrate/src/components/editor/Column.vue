@@ -40,8 +40,7 @@ import api from '../../api/index'
 
 export default {
   props: {
-    value: Object,
-    instrumentOutputs: Object
+    value: Object
   },
   computed: {
     instruments () {
@@ -52,6 +51,9 @@ export default {
     },
     isValidNote () {
       return api.isValidNote(this.value.melody)
+    },
+    outputs () {
+      return api.voicing(this.value.chord, this.value.melody, this.value.rule)
     }
   },
   methods: {
