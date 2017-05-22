@@ -1,3 +1,5 @@
+import api from '../api/index'
+
 export const rules = state => state.rules
 
 export const currentProjectId = state => state.current_project_id
@@ -16,12 +18,12 @@ export const columnOrder = (state, getters) =>
 export const instrumentOutputs = function (state, getters) {
   let out = {}
   for (let c in getters.columns) {
+    let column = getters.columns[c]
+    let notes = api.voicing(column.chord, column.melody, column.rule)
     let instruments = {}
     for (let i in getters.instruments) {
       // will call to API here
-      let melody = getters.columns[c].melody
-      let instrName = getters.instruments[i].key
-      instruments[getters.instruments[i].id] = (melody + ' ' + instrName)
+      instruments[getters.instruments[i].id] = notes.pop()
     }
     out[getters.columns[c].id] = instruments
   }
