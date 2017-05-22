@@ -28,8 +28,8 @@
   </app-rule-dropdown>
   <hr style="margin-top: 36px;">
   <div style="margin-bottom: 24px; height: 45px;"
-       v-for="instrumentOutput in instrumentOutputs">
-    <h2 class="title has-text-centered">{{ instrumentOutput }}</h2>
+       v-for="note in Math.min(outputs.length, instruments.length)">
+    <h2 class="title has-text-centered">{{ outputs[note-1] }}</h2>
   </div>
 </div>
 </template>
@@ -44,6 +44,9 @@ export default {
     instrumentOutputs: Object
   },
   computed: {
+    instruments () {
+      return this.$store.getters.instrumentOrder
+    },
     isValidChord () {
       return api.isValidChord(this.value.chord)
     },
