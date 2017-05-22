@@ -8,11 +8,11 @@ api.rules = {
 }
 
 api.isValidChord = function (chord) {
-  return (t.chord(chord).length !== 0)
+  return t.chord.isKnownChord(chord)
 }
 
 api.isValidNote = function (note) {
-  return !!t.note.simplify(note)
+  return !!t.note.name(note)
 }
 
 export default api

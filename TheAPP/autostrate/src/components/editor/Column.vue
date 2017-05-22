@@ -18,6 +18,7 @@
   <div class="field">
     <p class="control">
       <input class="input"
+             :class="{ 'is-danger': !isValidNote }"
              :value="value.melody"
              @input="updateProperty('melody', $event.target.value)">
     </p>
@@ -45,6 +46,9 @@ export default {
   computed: {
     isValidChord () {
       return api.isValidChord(this.value.chord)
+    },
+    isValidNote () {
+      return api.isValidNote(this.value.melody)
     }
   },
   methods: {
