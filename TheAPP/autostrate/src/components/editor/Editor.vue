@@ -4,6 +4,7 @@
     <app-meta></app-meta>
     <div class="columns is-mobile is-multiline is-gapless">
       <app-column-headers></app-column-headers>
+      <app-mobile-headers></app-mobile-headers>
       <app-column v-for="(id, index) in columnOrder"
                   :key="index"
                   @input="updateColumn(id)"
@@ -15,11 +16,12 @@
 </template>
 
 <script>
-import Column from './Column'
 import { mapGetters } from 'vuex'
+import Column from './Column'
 import ColumnHeaders from './ColumnHeaders'
 import AddBar from './AddBar'
 import Meta from './Meta'
+import MobileHeaders from './MobileHeaders'
 
 export default {
   computed: {
@@ -49,7 +51,7 @@ export default {
 
   },
   components: {
-
+    'app-mobile-headers': MobileHeaders,
     'app-meta': Meta,
     'app-column-headers': ColumnHeaders,
     'app-column': Column,

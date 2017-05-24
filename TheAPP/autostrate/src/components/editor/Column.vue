@@ -1,5 +1,5 @@
 <template lang="html">
-<div class="column is-1-desktop 
+<div class="column is-1-desktop
                    is-2-tablet
                    is-3-mobile">
   <div class="field has-text-centered">

@@ -6,6 +6,8 @@
   <div class="field is-hidden-mobile">
     <br class="title">
   </div>
+  <!--These 2 headers are hidden on mobile,
+  and are replaced by another 2 in the editor-->
   <div class="field is-hidden-mobile">
     <h1 class="title">Chords</h1>
   </div>
