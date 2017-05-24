@@ -16,7 +16,7 @@ export default {
     notes = notes.slice(0, 4)
     let droppedNote = notes.splice(1, 1)[0]
     notes.push(droppedNote)
-
+    notes = notes.reverse()
     return notes
   }
 }

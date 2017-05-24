@@ -30,8 +30,8 @@
   </app-rule-dropdown>
   <hr style="margin-top: 36px;">
   <div style="margin-bottom: 24px; height: 45px;"
-       v-for="note in Math.min(outputs.length, instruments.length)">
-    <h2 class="title has-text-centered">{{ outputs[note-1] }}</h2>
+       v-for="id in instrumentOrder">
+    <h2 class="title has-text-centered">{{ outputs[id] }}</h2>
   </div>
 </div>
 </template>
@@ -39,15 +39,17 @@
 <script>
 import RuleDropdown from './RuleDropdown'
 import api from '../../api/index'
+import { mapGetters } from 'vuex'
 
 export default {
   props: {
     value: Object
   },
   computed: {
-    instruments () {
-      return this.$store.getters.instrumentOrder
-    },
+    ...mapGetters([
+      'instrumentOrder',
+      'instruments'
+    ]),
     isValidChord () {
       return api.isValidChord(this.value.chord)
     },
