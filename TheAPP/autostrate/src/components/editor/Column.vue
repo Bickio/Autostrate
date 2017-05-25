@@ -22,7 +22,8 @@
       <input class="input"
              :class="{ 'is-danger': !isValidNote }"
              :value="value.melody"
-             @input="updateProperty('melody', $event.target.value)">
+             @input="updateProperty('melody',
+                                    capitaliseFirstLetter($event.target.value))">
     </p>
   </div>
   <app-rule-dropdown :value="value.rule"
@@ -71,6 +72,9 @@ export default {
     },
     remove () {
       this.$emit('remove', this.value.id)
+    },
+    capitaliseFirstLetter (string) {
+      return string.charAt(0).toUpperCase() + string.slice(1)
     }
   },
   components: {
