@@ -19,7 +19,7 @@ api.isValidNote = function (note) {
 }
 
 api.transposeNote = function (note, key) {
-  let interval = t.interval('C', key)
+  let interval = t.interval(key, 'C')
   return t.transpose(note, interval)
 }
 
