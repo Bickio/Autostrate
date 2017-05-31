@@ -28,3 +28,17 @@ describe('api/index transposeNote', () => {
       .to.equal('D')
   })
 })
+
+describe('api/index transposeVoicing', () => {
+  it('should transpose correctly', () => {
+    let voicing = ['E', 'D', 'B', 'G#']
+    let instruments = {
+      a: {key: 'C'},
+      b: {key: 'Bb'},
+      c: {key: 'D'},
+      d: {key: 'C'}
+    }
+    expect(api.transposeVoicing(voicing, instruments).b)
+      .to.equal('C#')
+  })
+})
