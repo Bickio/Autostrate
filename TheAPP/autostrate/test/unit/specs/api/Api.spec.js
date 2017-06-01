@@ -50,3 +50,39 @@ describe('api/index transposeVoicing', () => {
       .to.equal('C#')
   })
 })
+
+describe('api/index voicing', () => {
+  let chord = 'Am7'
+  let melody = 'C'
+  let rule = 'r_54321'
+  let instruments = {
+    'i_1496284506526': {
+      'id': 'i_1496284506526',
+      'name': 'Trumpet',
+      'key': 'Bb'
+    },
+    'i_1496284507508': {
+      'id': 'i_1496284507508',
+      'name': 'Alto Sax',
+      'key': 'Eb'
+    },
+    'i_1496284508012': {
+      'id': 'i_1496284508012',
+      'name': 'Tenor Sax',
+      'key': 'Bb'
+    },
+    'i_1496284509005': {
+      'id': 'i_1496284509005',
+      'name': 'Trombone',
+      'key': 'C'
+    }
+  }
+  it('should voice correctly on valid input', () => {
+    expect(api.voicing(chord, melody, rule, instruments).i_1496284508012)
+      .to.equal('F#')
+  })
+  it('should output blank on blank chord', () => {
+    expect(api.voicing('', melody, rule, instruments).i_1496284508012)
+      .to.equal()
+  })
+})
