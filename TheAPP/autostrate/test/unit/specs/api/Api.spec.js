@@ -1,6 +1,10 @@
 import api from '@/api/index'
 
 describe('api/index isValidChord', () => {
+  it('should output true for a blank input', () => {
+    expect(api.isValidChord(''))
+      .to.equal(true)
+  })
   it('should output true for Dsus4add9', () => {
     expect(api.isValidChord('Dsus4add9'))
       .to.equal(true)
@@ -12,6 +16,10 @@ describe('api/index isValidChord', () => {
 })
 
 describe('api/index isValidNote', () => {
+  it('should output true for a blank input', () => {
+    expect(api.isValidNote(''))
+      .to.equal(true)
+  })
   it('should output true for D', () => {
     expect(api.isValidNote('D'))
       .to.equal(true)
