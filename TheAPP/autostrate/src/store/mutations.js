@@ -31,7 +31,6 @@ export default {
   },
   insertColumnBeforeId (state, [projectId, columnId]) {
     let index = state.projects[projectId].column_order.indexOf(columnId)
-    index -= 1
     insertColumn(state, projectId, index)
   },
   updateColumn (state, [projectId, key, column]) {
