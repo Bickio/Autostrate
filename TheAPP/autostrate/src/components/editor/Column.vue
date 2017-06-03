@@ -13,7 +13,7 @@
     <p class="control">
       <input class="input"
              :class="{ 'is-danger': !isValidChord }"
-             :value="value.chord"
+             :column="column.chord"
              @input="updateProperty('chord', $event.target.value)">
     </p>
   </div>
@@ -21,12 +21,12 @@
     <p class="control">
       <input class="input"
              :class="{ 'is-danger': !isValidNote }"
-             :value="value.melody"
+             :column="column.melody"
              @input="updateProperty('melody',
                                     capitaliseFirstLetter($event.target.value))">
     </p>
   </div>
-  <app-rule-dropdown :value="value.rule"
+  <app-rule-dropdown :value="column.rule"
                      @input="updateProperty('rule', $event)">
   </app-rule-dropdown>
   <hr style="margin-top: 36px;">
@@ -44,34 +44,41 @@ import { mapGetters } from 'vuex'
 
 export default {
   props: {
-    value: Object
+    id: String
   },
   computed: {
     ...mapGetters([
+      'currentProjectId',
       'instrumentOrder',
-      'instruments'
+      'instruments',
+      'columns'
     ]),
+    column () {
+      return this.columns[this.id]
+    },
     isValidChord () {
-      return api.isValidChord(this.value.chord)
+      return api.isValidChord(this.column.chord)
     },
     isValidNote () {
-      return api.isValidNote(this.value.melody)
+      return api.isValidNote(this.column.melody)
     },
     outputs () {
-      let chord = this.value.chord
-      let melody = this.value.melody
-      let rule = this.value.rule
+      let chord = this.column.chord
+      let melody = this.column.melody
+      let rule = this.column.rule
       let instruments = this.instruments
       return api.voicing(chord, melody, rule, instruments)
     }
   },
   methods: {
     updateProperty (property, value) {
-      this.value[property] = value
-      this.$emit('input', this.value)
+      let column = this.column
+      column[property] = value
+      this.$store.commit('updateColumn',
+                         [this.currentProjectId, this.id, this.column])
     },
     remove () {
-      this.$emit('remove', this.value.id)
+      this.$store.commit('removeColumn', [this.currentProjectId, this.id])
     },
     capitaliseFirstLetter (string) {
       return string.charAt(0).toUpperCase() + string.slice(1)

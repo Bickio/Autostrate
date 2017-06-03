@@ -7,9 +7,7 @@
       <app-mobile-headers></app-mobile-headers>
       <app-column v-for="(id, index) in columnOrder"
                   :key="index"
-                  @input="updateColumn(id)"
-                  @remove="removeColumn"
-                  v-model="columns[id]"></app-column>
+                  :id="id"></app-column>
       <app-add-bar @addColumn="addColumn"></app-add-bar>
     </div>
   </div>
