@@ -23,10 +23,16 @@ export default {
     state.projects[projectId][property] = value
   },
   pushColumn (state, projectId) {
-    let index = state.projects[projectId].column_order.length
+    let index = state.projects[projectId].column_order.length // end of columns
     insertColumn(state, projectId, index)
   },
-  insertColumn,
+  insertColumnAtIndex (state, projectId, index) {
+    insertColumn(state, projectId, index)
+  },
+  insertColumnAfterId (state, projectId, columnId) {
+    let index = state.projects[projectId].column_order.indexOf(columnId)
+    insertColumn(state, projectId, index)
+  },
   updateColumn (state, [projectId, key, column]) {
     state.projects[projectId].columns[key] = column
   },
