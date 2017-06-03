@@ -16,6 +16,18 @@ export default {
     Vue.set(state.projects[projectId].columns, id, column)
     state.projects[projectId].column_order.push(id)
   },
+  insertColumn (state, projectId, index) {
+    let timestamp = Date.now()
+    let id = 'c_' + timestamp
+    let column = {
+      id,
+      chord: '',
+      melody: '',
+      rule: state.projects[projectId].default_rule
+    }
+    Vue.set(state.projects[projectId].columns, id, column)
+    state.projects[projectId].column_orderarr.splice(index, 0, id)
+  },
   updateColumn (state, [projectId, key, column]) {
     state.projects[projectId].columns[key] = column
   },
