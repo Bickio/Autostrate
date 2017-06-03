@@ -28,7 +28,7 @@
     <!-- Add the modifier "is-active" to display it on mobile -->
     <div class="nav-right nav-menu"
          :class="{'is-active': navMenuOn}"
-         @click="navMenuOn = !navMenuOn">
+         @click="navMenuOn = false">
       <router-link :to="'/'"
                    exact
                    class="nav-item is-tab"
