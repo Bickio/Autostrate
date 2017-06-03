@@ -3,9 +3,7 @@
     <section class="hero">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">
-            {{msg}}!!!
-          </h1>
+          <h1 class="title">{{msg}}!!!</h1>
           <h2 class="subtitle">
             This is version {{version}}
           </h2>
