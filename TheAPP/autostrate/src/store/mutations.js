@@ -26,11 +26,12 @@ export default {
     let index = state.projects[projectId].column_order.length // end of columns
     insertColumn(state, projectId, index)
   },
-  insertColumnAtIndex (state, projectId, index) {
+  insertColumnAtIndex (state, [projectId, index]) {
     insertColumn(state, projectId, index)
   },
-  insertColumnAfterId (state, projectId, columnId) {
+  insertColumnBeforeId (state, [projectId, columnId]) {
     let index = state.projects[projectId].column_order.indexOf(columnId)
+    index -= 1
     insertColumn(state, projectId, index)
   },
   updateColumn (state, [projectId, key, column]) {
