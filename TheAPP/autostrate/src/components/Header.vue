@@ -2,7 +2,7 @@
   <nav class="nav has-shadow">
     <div class="nav-left">
       <a class="nav-item">
-        <img src="http://via.placeholder.com/640x160?text=Logo" alt="Bulma logo">
+        <img src="../assets/autostrate.png" alt="Autostrate logo">
       </a>
     </div>
 
