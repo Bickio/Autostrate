@@ -13,7 +13,7 @@
     <p class="control">
       <input class="input"
              :class="{ 'is-danger': !isValidChord }"
-             :column="column.chord"
+             :value="column.chord"
              @input="updateProperty('chord', $event.target.value)">
     </p>
   </div>
@@ -21,7 +21,7 @@
     <p class="control">
       <input class="input"
              :class="{ 'is-danger': !isValidNote }"
-             :column="column.melody"
+             :value="column.melody"
              @input="updateProperty('melody',
                                     capitaliseFirstLetter($event.target.value))">
     </p>
