@@ -3,6 +3,11 @@
                    is-2-tablet
                    is-3-mobile">
   <div class="field has-text-centered">
+    <a class="button is-outlined is-primary" @click="insert">
+      <span class="icon is-small">
+        <i class="fa fa-arrow-down"></i>
+      </span>
+    </a>
     <a class="button is-danger is-outlined" @click="remove">
       <span class="icon is-small">
         <i class="fa fa-times"></i>
@@ -13,7 +18,7 @@
     <p class="control">
       <input class="input"
              :class="{ 'is-danger': !isValidChord }"
-             :column="column.chord"
+             :value="column.chord"
              @input="updateProperty('chord', $event.target.value)">
     </p>
   </div>
@@ -21,7 +26,7 @@
     <p class="control">
       <input class="input"
              :class="{ 'is-danger': !isValidNote }"
-             :column="column.melody"
+             :value="column.melody"
              @input="updateProperty('melody',
                                     capitaliseFirstLetter($event.target.value))">
     </p>
@@ -79,6 +84,9 @@ export default {
     },
     remove () {
       this.$store.commit('removeColumn', [this.currentProjectId, this.id])
+    },
+    insert () {
+      this.$store.commit('insertColumnBeforeId', [this.currentProjectId, this.id])
     },
     capitaliseFirstLetter (string) {
       return string.charAt(0).toUpperCase() + string.slice(1)

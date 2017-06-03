@@ -8,7 +8,7 @@
       <app-column v-for="(id, index) in columnOrder"
                   :key="index"
                   :id="id"></app-column>
-      <app-add-bar @addColumn="addColumn"></app-add-bar>
+      <app-add-bar @pushColumn="pushColumn"></app-add-bar>
     </div>
   </div>
 </template>
@@ -30,8 +30,8 @@ export default {
     ])
   },
   methods: {
-    addColumn () {
-      this.$store.commit('addColumn', this.currentProjectId)
+    pushColumn () {
+      this.$store.commit('pushColumn', this.currentProjectId)
     },
     updateColumn (key) {
       let projectId = this.currentProjectId
