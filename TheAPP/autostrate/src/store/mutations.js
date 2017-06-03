@@ -1,33 +1,32 @@
 import Vue from 'vue'
 
+// Helper functions for mutations (to remove duplicate code)
+function createId (prefix) {
+  let timestamp = Date.now()
+  let id = prefix + '_' + timestamp
+  return id
+}
+function insertColumn (state, projectId, index) {
+  let id = createId('c')
+  let column = {
+    id,
+    chord: '',
+    melody: '',
+    rule: state.projects[projectId].default_rule
+  }
+  Vue.set(state.projects[projectId].columns, id, column)
+  state.projects[projectId].column_order.splice(index, 0, id)
+}
+
 export default {
   updateProjectProperty (state, [projectId, property, value]) {
     state.projects[projectId][property] = value
   },
   pushColumn (state, projectId) {
-    let timestamp = Date.now()
-    let id = 'c_' + timestamp
-    let column = {
-      id,
-      chord: '',
-      melody: '',
-      rule: state.projects[projectId].default_rule
-    }
-    Vue.set(state.projects[projectId].columns, id, column)
-    state.projects[projectId].column_order.push(id)
+    let index = state.projects[projectId].column_order.length
+    insertColumn(state, projectId, index)
   },
-  insertColumn (state, projectId, index) {
-    let timestamp = Date.now()
-    let id = 'c_' + timestamp
-    let column = {
-      id,
-      chord: '',
-      melody: '',
-      rule: state.projects[projectId].default_rule
-    }
-    Vue.set(state.projects[projectId].columns, id, column)
-    state.projects[projectId].column_orderarr.splice(index, 0, id)
-  },
+  insertColumn,
   updateColumn (state, [projectId, key, column]) {
     state.projects[projectId].columns[key] = column
   },
@@ -40,8 +39,7 @@ export default {
     state.projects[projectId].default_rule = rule
   },
   addInstrument (state, projectId) {
-    let timestamp = Date.now()
-    let id = 'i_' + timestamp
+    let id = createId('i')
     let instrument = {
       id,
       name: '',
