@@ -26,13 +26,18 @@
   <div class="field">
     <h1 class="title">Instruments</h1>
   </div>
-  <app-instrument-header v-for="(id, index) in instrumentOrder"
-                         :key="index"
-                         :instrument="instruments[id]"/>
-  <a class="button is-primary is-outlined is-medium"
-     style="width: 100%;"
-     @click="addInstrument">New Instrument</a>
-  <hr>
+  <transition-group name="list" tag="div">
+    <app-instrument-header v-for="(id, index) in instrumentOrder"
+                           :key="id"
+                           :instrument="instruments[id]"
+                           class="list-item"/>
+    <a class="button is-primary is-outlined is-medium list-item"
+       style="width: 100%;"
+       @click="addInstrument"
+       key="button">New Instrument</a>
+    <hr class="list-item" key="hr">
+  </transition-group>
+
 </div>
 </template>
 
@@ -67,5 +72,19 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.column-list {
+}
+.list-item {
+  transition: all 0.5s;
+}
+.list-enter, .list-leave-to{
+  opacity: 0;
+}
+.list-leave-to {
 
+  overflow: hidden;
+}
+.list-leave-active {
+  display: none;
+}
 </style>
