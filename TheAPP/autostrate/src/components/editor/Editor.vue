@@ -75,7 +75,9 @@ export default {
 .list-enter, .list-leave-to {
   opacity: 0;
 }
-.list-leave-active {
-  position: absolute;
+.list-leave-to {
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 </style>
