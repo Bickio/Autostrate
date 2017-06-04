@@ -70,7 +70,7 @@ export default {
   overflow: hidden;
 }
 .list-item {
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 .list-enter, .list-leave-to {
   opacity: 0;
