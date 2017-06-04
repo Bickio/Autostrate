@@ -2,14 +2,21 @@
   <div class="container">
     <br>
     <app-meta></app-meta>
-    <div class="columns is-mobile is-multiline is-gapless">
-      <app-column-headers></app-column-headers>
-      <app-mobile-headers></app-mobile-headers>
+    <transition-group class="columns is-mobile is-multiline is-gapless column-list"
+                      tag="div"
+                      name="list">
+      <app-column-headers key="h"
+                          class="list-item"></app-column-headers>
+      <app-mobile-headers key="mh"
+                          class="list-item"></app-mobile-headers>
       <app-column v-for="(id, index) in columnOrder"
-                  :key="index"
+                  class="list-item"
+                  :key="id"
                   :id="id"></app-column>
-      <app-add-bar @pushColumn="pushColumn"></app-add-bar>
-    </div>
+      <app-add-bar @pushColumn="pushColumn"
+                   class="list-item"
+                   key="ab"></app-add-bar>
+    </transition-group>
   </div>
 </template>
 
@@ -58,5 +65,17 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+.column-list {
+  overflow: hidden;
+}
+.list-item {
+  transition: all 0.5s;
+}
+.list-enter, .list-leave-to {
+  opacity: 0;
+}
+.list-leave-active {
+  position: absolute;
+}
 </style>
