@@ -1,16 +1,16 @@
 <template>
-  <div class="container has-text-centered">
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">{{msg}}!!!</h1>
-          <h2 class="subtitle">
-            This is version {{version}}
-          </h2>
-        </div>
-      </div>
-      <h2 class="title is-3">To get started click the 'editor' button</h2>
-    </section>
+  <div class="content has-text-centered">
+    <h1>{{msg}}!!!</h1>
+    <h2>
+      This is version {{version}}
+    </h2>
+    <h3>
+      Changelog:
+    </h3>
+    <li>Columns now have an insert button</li>
+    <li>Columns and instruments have smooth transitions</li>
+    <li>Several small fixes</li>
+    <h2 class="title is-3">To get started click the 'editor' button</h2>
   </div>
 
 </template>
@@ -21,7 +21,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Autostrate',
-      version: 0.1
+      version: 0.2
     }
   }
 }
