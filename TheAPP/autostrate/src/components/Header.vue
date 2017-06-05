@@ -2,7 +2,7 @@
   <nav class="nav has-shadow">
     <div class="nav-left">
       <a class="nav-item">
-        <img src="http://via.placeholder.com/640x160?text=Logo" alt="Bulma logo">
+        <img src="../assets/autostrate.png" alt="Autostrate logo">
       </a>
     </div>
 
@@ -28,7 +28,7 @@
     <!-- Add the modifier "is-active" to display it on mobile -->
     <div class="nav-right nav-menu"
          :class="{'is-active': navMenuOn}"
-         @click="navMenuOn = !navMenuOn">
+         @click="navMenuOn = false">
       <router-link :to="'/'"
                    exact
                    class="nav-item is-tab"

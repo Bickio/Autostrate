@@ -2,16 +2,21 @@
   <div class="container">
     <br>
     <app-meta></app-meta>
-    <div class="columns is-mobile is-multiline is-gapless">
-      <app-column-headers></app-column-headers>
-      <app-mobile-headers></app-mobile-headers>
+    <transition-group class="columns is-mobile is-multiline is-gapless column-list"
+                      tag="div"
+                      name="list">
+      <app-column-headers key="h"
+                          class="list-item"></app-column-headers>
+      <app-mobile-headers key="mh"
+                          class="list-item"></app-mobile-headers>
       <app-column v-for="(id, index) in columnOrder"
-                  :key="index"
-                  @input="updateColumn(id)"
-                  @remove="removeColumn"
-                  v-model="columns[id]"></app-column>
-      <app-add-bar @addColumn="addColumn"></app-add-bar>
-    </div>
+                  class="list-item"
+                  :key="id"
+                  :id="id"></app-column>
+      <app-add-bar @pushColumn="pushColumn"
+                   class="list-item"
+                   key="ab"></app-add-bar>
+    </transition-group>
   </div>
 </template>
 
@@ -32,8 +37,8 @@ export default {
     ])
   },
   methods: {
-    addColumn () {
-      this.$store.commit('addColumn', this.currentProjectId)
+    pushColumn () {
+      this.$store.commit('pushColumn', this.currentProjectId)
     },
     updateColumn (key) {
       let projectId = this.currentProjectId
@@ -60,5 +65,19 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+.column-list {
+  overflow: hidden;
+}
+.list-item {
+  transition: all 0.2s;
+}
+.list-enter, .list-leave-to {
+  opacity: 0;
+}
+.list-leave-to {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
 </style>

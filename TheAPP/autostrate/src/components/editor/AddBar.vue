@@ -8,7 +8,7 @@
     <button type="button"
             name="button"
             class="button is-primary is-outlined"
-            @click="addColumn"
+            @click="pushColumn"
             style="width: 100%; height: 132px; margin-bottom: 12px;">Add</button>
     <hr>
   </div>
@@ -17,8 +17,8 @@
 <script>
 export default {
   methods: {
-    addColumn () {
-      this.$emit('addColumn')
+    pushColumn () {
+      this.$emit('pushColumn')
     }
   }
 }

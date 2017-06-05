@@ -12,7 +12,7 @@ module.exports = {
       .url(devServer)
       .waitForElementVisible('#app', 5000)
       .assert.containsText('h1', 'Welcome to Autostrate!!!')
-      .assert.elementCount('img', 0)
+      .assert.elementCount('img', 1)
       .end()
   }
 }
