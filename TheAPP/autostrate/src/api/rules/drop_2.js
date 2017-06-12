@@ -1,7 +1,6 @@
 import t from 'tonal'
 
 export default {
-  id: 'r_54321',
   name: 'Drop 2',
   number_of_instruments: 4,
   makeVoicing: function (chord, melody) {

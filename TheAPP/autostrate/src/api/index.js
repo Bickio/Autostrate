@@ -1,11 +1,18 @@
 import t from 'tonal'
 import drop2 from './rules/drop_2'
 
+function makeRules (ruleList) {
+  let rules = {}
+  for (let i = 0; i < ruleList.length; i++) {
+    rules['r_' + i] = ruleList[i]
+    rules['r_' + i].id = ['r_' + i]
+  }
+  return rules
+}
+
 var api = {}
 
-api.rules = {}
-
-api.rules[drop2.id] = drop2
+api.rules = makeRules([drop2])
 
 api.isValidChord = function (chord) {
   return t.chord.isKnownChord(chord)
@@ -33,8 +40,9 @@ api.transposeVoicing = function (voicing, instruments) {
 
 api.voicing = function (chord, melody, rule, instruments) {
   let numberOfInstruments = Object.keys(instruments).length
-  // Check for an empty field
-  if (!chord || !melody) {
+  // Check for an empty field or unselected rule
+  if (!chord || !melody || !rule) {
+    // Output a blank output for each instrument
     return Array(numberOfInstruments).fill('')
   }
   let voicing = api.rules[rule].makeVoicing(chord, melody)

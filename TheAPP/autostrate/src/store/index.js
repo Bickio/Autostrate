@@ -3,27 +3,15 @@ import Vuex from 'vuex'
 import mutations from './mutations'
 import actions from './actions'
 import * as getters from './getters'
+import api from '../api/index'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     current_project_id: 'test',
-    rules: {
-      /*
-      id: {
-        id,
-        name,
-        rule function
-      }
-      */
-      r_54321: {
-        id: 'r_54321',
-        name: 'drop 2',
-        rule: 'placeholder'
-      }
-    },
-    default_rule: 'r_12345',
+    rules: api.rules,
+    default_rule: '',
     projects: {
       /*
       id: {
@@ -55,7 +43,7 @@ export default new Vuex.Store({
         id: 'test',
         name: '',
         key: '',
-        default_rule: 'r_54321',
+        default_rule: '',
         instrument_order: [],
         instruments: {
         },
