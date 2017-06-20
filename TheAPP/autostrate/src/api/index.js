@@ -1,5 +1,6 @@
 import t from 'tonal'
 import drop2 from './rules/drop_2'
+import close from './rules/close'
 
 function makeRules (ruleList) {
   let rules = {}
@@ -12,7 +13,7 @@ function makeRules (ruleList) {
 
 var api = {}
 
-api.rules = makeRules([drop2])
+api.rules = makeRules([drop2, close])
 
 api.isValidChord = function (chord) {
   return t.chord.isKnownChord(chord)
