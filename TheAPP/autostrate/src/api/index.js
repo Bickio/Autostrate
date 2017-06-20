@@ -46,7 +46,14 @@ api.voicing = function (chord, melody, rule, instruments) {
     // Output a blank output for each instrument
     return Array(numberOfInstruments).fill('')
   }
-  let voicing = api.rules[rule].makeVoicing(chord, melody)
+  let data = {
+    chord,
+    melody,
+    numberOfInstruments,
+    instruments
+  }
+  let voicing
+  voicing = api.rules[rule].makeVoicing(data)
   voicing = api.transposeVoicing(voicing, instruments)
   return voicing
 }
