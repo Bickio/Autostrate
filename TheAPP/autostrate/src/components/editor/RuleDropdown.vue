@@ -1,7 +1,9 @@
 <template lang="html">
-  <div class="field">
+  <div class="field"
+       :title="error">
     <p class="control">
       <span class="select"
+            :class="{'is-danger': error}"
             style="width: 100%;">
         <select style="width: 100%;"
                 :value="value"
@@ -17,7 +19,13 @@
 
 <script>
 export default {
-  props: ['value'],
+  props: {
+    value: [Array, String],
+    error: {
+      type: String,
+      default: ''
+    }
+  },
   methods: {
     update (value) {
       this.$emit('input', this.rules[value].id)
@@ -31,5 +39,5 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 </style>

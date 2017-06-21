@@ -32,6 +32,7 @@
     </p>
   </div>
   <app-rule-dropdown :value="column.rule"
+                     :error="error"
                      @input="updateProperty('rule', $event)">
   </app-rule-dropdown>
   <hr style="margin-top: 36px;">
@@ -48,6 +49,11 @@ import api from '../../api/index'
 import { mapGetters } from 'vuex'
 
 export default {
+  data () {
+    return {
+      error: 'test'
+    }
+  },
   props: {
     id: String
   },
@@ -72,7 +78,15 @@ export default {
       let melody = this.column.melody
       let rule = this.column.rule
       let instruments = this.instruments
-      return api.voicing(chord, melody, rule, instruments)
+      var voicing
+      try {
+        voicing = api.voicing(chord, melody, rule, instruments)
+        this.error = ''
+      } catch (error) {
+        this.error = error.message
+        voicing = Array(Object.keys(instruments).length).fill('')
+      }
+      return voicing
     }
   },
   methods: {
