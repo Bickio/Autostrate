@@ -53,10 +53,10 @@ export default {
 
     // If the chord still has more than four notes throw an Error
     if (chordNotes.length > 4) {
-      throw new Error('TooManyNotesError')
+      throw new Error('Too many notes in the chord')
     }
     if (chordNotes.length < 4) {
-      throw new Error('NotEnoughNotesError')
+      throw new Error('Not enough notes in the chord')
     }
 
     // Shift notes down an octave if more than an octave higher than the root
