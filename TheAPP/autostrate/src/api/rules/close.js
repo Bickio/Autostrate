@@ -1,32 +1,32 @@
 var t = require('teoria')
 
+var simpleNotes = function (notes) {
+  let simple = []
+  for (let note of notes) {
+    simple.push(note.name())
+  }
+  return simple
+}
+
+var chromaNotes = function (notes) {
+  let chroma = []
+  for (let note of notes) {
+    chroma.push(note.chroma())
+  }
+  return chroma
+}
+
+var removeNote = function (notes, note) {
+  let i = simpleNotes(notes).indexOf(note.name())
+  notes.splice(i, 1)
+  return notes
+}
+
 export default {
   name: 'Close',
   number_of_instruments: '',
   makeVoicing: function ({chord, melody}) {
     // Helper functions
-    var simpleNotes = function (notes) {
-      let simple = []
-      for (let note of notes) {
-        simple.push(note.name())
-      }
-      return simple
-    }
-
-    var chromaNotes = function (notes) {
-      let chroma = []
-      for (let note of notes) {
-        chroma.push(note.chroma())
-      }
-      return chroma
-    }
-
-    var removeNote = function (notes, note) {
-      let i = simpleNotes(notes).indexOf(note.name())
-      notes.splice(i, 1)
-      return notes
-    }
-
     melody = t.note.fromString(melody)
     chord = t.chord(chord)
     var root = chord.root
