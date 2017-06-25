@@ -1,3 +1,4 @@
+import teoria from 'teoria'
 import t from 'tonal'
 import drop2 from './rules/drop_2'
 import close from './rules/close'
@@ -27,8 +28,13 @@ api.isValidNote = function (note) {
 }
 
 api.transposeNote = function (note, key) {
-  let interval = t.interval(key, 'C')
-  return t.transpose(note, interval)
+  let refNote = teoria.note('C4')
+  if (teoria.note(key).octave() === 2) {
+    refNote.transpose(teoria.interval('P8').direction('down'))
+    refNote.transpose(teoria.interval('P8').direction('down'))
+  }
+  let interval = teoria.interval.between(teoria.note(key), refNote)
+  return note.transpose(interval)
 }
 
 api.transposeVoicing = function (voicing, instruments) {
@@ -55,6 +61,11 @@ api.voicing = function (chord, melody, rule, instruments) {
   let voicing
   voicing = api.rules[rule].makeVoicing(data)
   voicing = api.transposeVoicing(voicing, instruments)
+
+  for (let note in voicing) {
+    voicing[note] = voicing[note].scientific()
+  }
+
   return voicing
 }
 

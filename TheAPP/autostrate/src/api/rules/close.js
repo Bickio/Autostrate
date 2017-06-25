@@ -80,11 +80,6 @@ export default {
     for (let note in chordNotes) {
       chordNotes[note].transpose(interval)
     }
-
-    for (let note in chordNotes) {
-      chordNotes[note] = chordNotes[note].scientific()
-    }
-
     return chordNotes
   }
 }
