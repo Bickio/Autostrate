@@ -51,7 +51,7 @@ import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
-      error: 'test'
+      error: ''
     }
   },
   props: {
