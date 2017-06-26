@@ -26,7 +26,9 @@ api.isValidNote = function (note) {
   }
   return !!t.note.name(note)
 }
-
+api.isValidKey = function (key) {
+  return api.isValidNote(key) && key
+}
 api.transposeNote = function (note, key) {
   let refNote = teoria.note('C4')
   if (teoria.note(key).octave() === 2) {
