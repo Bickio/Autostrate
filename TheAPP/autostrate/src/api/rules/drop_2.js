@@ -1,22 +1,14 @@
-import t from 'tonal'
+import t from 'teoria'
+import close from './close'
 
 export default {
-  id: 'r_54321',
   name: 'Drop 2',
   number_of_instruments: 4,
-  makeVoicing: function (chord, melody) {
-    let notes = t.chord.notes(chord)
-    let i = notes.indexOf(melody) + 1
-
-    // Cheap hack to make sure there are enough notes
-    notes = notes.concat(notes).concat(notes)
-
-    notes = notes.slice(i, notes.length).concat(notes.slice(0, i))
-    notes = notes.reverse()
-    notes = notes.slice(0, 4)
-    let droppedNote = notes.splice(1, 1)[0]
-    notes.push(droppedNote)
-    notes = notes.reverse()
-    return notes
+  makeVoicing: function ({chord, melody}) {
+    let chordNotes = close.makeVoicing({chord, melody})
+    let two = chordNotes[2].transpose(t.interval('P8').direction('down'))
+    chordNotes[2] = two
+    chordNotes.sort((a, b) => (a.key() - b.key()))
+    return chordNotes
   }
 }
