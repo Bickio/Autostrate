@@ -63,7 +63,12 @@ api.voicing = function (chord, melody, rule, instruments) {
   voicing = api.transposeVoicing(voicing, instruments)
 
   for (let note in voicing) {
-    voicing[note] = voicing[note].scientific()
+    if (!isNaN(melody.slice(-1))) {
+      voicing[note] = voicing[note].scientific()
+    } else {
+      voicing[note] = voicing[note].toString(true)
+      voicing[note] = voicing[note][0].toUpperCase() + voicing[note].slice(1)
+    }
   }
 
   return voicing
