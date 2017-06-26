@@ -54,6 +54,12 @@ api.voicing = function (chord, melody, rule, instruments) {
     // Output a blank output for each instrument
     return Array(numberOfInstruments).fill('')
   }
+  // If any of the keys are blank output a blank voicing
+  for (let i of Object.keys(instruments)) {
+    if (!instruments[i].key) {
+      return Array(numberOfInstruments).fill('')
+    }
+  }
   let data = {
     chord,
     melody,
