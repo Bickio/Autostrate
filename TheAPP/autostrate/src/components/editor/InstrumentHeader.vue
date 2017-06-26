@@ -19,6 +19,7 @@
     <div class="field column is-3">
       <p class="control">
         <input class="input is-medium"
+               :class="{ 'is-danger': !isValidKey }"
                type="text"
                placeholder="Key"
                :value="instrument.key"
@@ -30,11 +31,17 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import api from '../../api/index'
 export default {
   props: ['instrument'],
-  computed: mapGetters([
-    'currentProjectId'
-  ]),
+  computed: {
+    ...mapGetters([
+      'currentProjectId'
+    ]),
+    isValidKey () {
+      return api.isValidKey(this.instrument.key)
+    }
+  },
   methods: {
     updateProperty (property, value) {
       let projectId = this.currentProjectId
