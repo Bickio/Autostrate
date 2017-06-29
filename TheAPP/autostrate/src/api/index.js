@@ -12,74 +12,80 @@ function makeRules (ruleList) {
   return rules
 }
 
-var api = {}
-
-api.rules = makeRules([drop2, close])
-
-api.isValidChord = function (chord) {
-  return t.chord.isKnownChord(chord)
-}
-
-api.isValidNote = function (note) {
-  if (!note) {
-    return true
+export default class Api {
+  constructor () {
+    this._rules = makeRules([drop2, close])
   }
-  return !!t.note.name(note)
-}
-api.isValidKey = function (key) {
-  return api.isValidNote(key) && key
-}
-api.transposeNote = function (note, key) {
-  let refNote = teoria.note('C4')
-  if (teoria.note(key).octave() === 2) {
-    refNote.transpose(teoria.interval('P8').direction('down'))
-    refNote.transpose(teoria.interval('P8').direction('down'))
-  }
-  let interval = teoria.interval.between(teoria.note(key), refNote)
-  return note.transpose(interval)
-}
 
-api.transposeVoicing = function (voicing, instruments) {
-  let transposed = {}
-  for (let id in instruments) {
-    transposed[id] = api.transposeNote(voicing.pop(), instruments[id].key)
+  static isValidChord (chord) {
+    return t.chord.isKnownChord(chord)
   }
-  return transposed
-}
 
-api.voicing = function (chord, melody, rule, instruments) {
-  let numberOfInstruments = Object.keys(instruments).length
-  // Check for an empty field or unselected rule
-  if (!chord || !melody || !rule) {
-    // Output a blank output for each instrument
-    return Array(numberOfInstruments).fill('')
+  static isValidNote (note) {
+    if (!note) {
+      return true
+    }
+    return !!t.note.name(note)
   }
-  // If any of the keys are blank output a blank voicing
-  for (let i of Object.keys(instruments)) {
-    if (!instruments[i].key) {
+
+  static isValidKey (key) {
+    return this.isValidNote(key) && key
+  }
+
+  static transposeNote (note, key) {
+    let refNote = teoria.note('C4')
+    if (teoria.note(key).octave() === 2) {
+      refNote.transpose(teoria.interval('P8').direction('down'))
+      refNote.transpose(teoria.interval('P8').direction('down'))
+    }
+    let interval = teoria.interval.between(teoria.note(key), refNote)
+    return note.transpose(interval)
+  }
+
+  static transposeVoicing (voicing, instruments) {
+    let transposed = {}
+    for (let id in instruments) {
+      transposed[id] = this.transposeNote(voicing.pop(), instruments[id].key)
+    }
+    return transposed
+  }
+
+  voicing (chord, melody, rule, instruments) {
+    let numberOfInstruments = Object.keys(instruments).length
+    // Check for an empty field or unselected rule
+    if (!chord || !melody || !rule) {
+      // Output a blank output for each instrument
       return Array(numberOfInstruments).fill('')
     }
-  }
-  let data = {
-    chord,
-    melody,
-    numberOfInstruments,
-    instruments
-  }
-  let voicing
-  voicing = api.rules[rule].makeVoicing(data)
-  voicing = api.transposeVoicing(voicing, instruments)
-
-  for (let note in voicing) {
-    if (!isNaN(melody.slice(-1))) {
-      voicing[note] = voicing[note].scientific()
-    } else {
-      voicing[note] = voicing[note].toString(true)
-      voicing[note] = voicing[note][0].toUpperCase() + voicing[note].slice(1)
+    // If any of the keys are blank output a blank voicing
+    for (let i of Object.keys(instruments)) {
+      if (!instruments[i].key) {
+        return Array(numberOfInstruments).fill('')
+      }
     }
+    let data = {
+      chord,
+      melody,
+      numberOfInstruments,
+      instruments
+    }
+    let voicing
+    voicing = this._rules[rule].makeVoicing(data)
+    voicing = this.transposeVoicing(voicing, instruments)
+
+    for (let note in voicing) {
+      if (!isNaN(melody.slice(-1))) {
+        voicing[note] = voicing[note].scientific()
+      } else {
+        voicing[note] = voicing[note].toString(true)
+        voicing[note] = voicing[note][0].toUpperCase() + voicing[note].slice(1)
+      }
+    }
+
+    return voicing
   }
 
-  return voicing
+  get rules () {
+    return this._rules
+  }
 }
-
-export default api
