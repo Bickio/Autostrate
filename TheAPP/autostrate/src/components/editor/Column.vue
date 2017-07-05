@@ -45,7 +45,7 @@
 
 <script>
 import RuleDropdown from './RuleDropdown'
-import api from '../../api/index'
+import Api from '../../api/index'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -68,10 +68,10 @@ export default {
       return this.columns[this.id]
     },
     isValidChord () {
-      return api.isValidChord(this.column.chord)
+      return Api.isValidChord(this.column.chord)
     },
     isValidNote () {
-      return api.isValidNote(this.column.melody)
+      return Api.isValidNote(this.column.melody)
     },
     outputs () {
       let chord = this.column.chord
@@ -80,7 +80,7 @@ export default {
       let instruments = this.instruments
       var voicing
       try {
-        voicing = api.voicing(chord, melody, rule, instruments)
+        voicing = new Api().voicing(chord, melody, rule, instruments)
         this.error = ''
       } catch (error) {
         this.error = error.message
