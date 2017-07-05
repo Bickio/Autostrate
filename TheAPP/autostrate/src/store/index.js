@@ -3,14 +3,14 @@ import Vuex from 'vuex'
 import mutations from './mutations'
 import actions from './actions'
 import * as getters from './getters'
-import api from '../api/index'
+import Api from '../api/index'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     current_project_id: 'test',
-    rules: api.rules,
+    rules: new Api().rules,
     default_rule: '',
     projects: {
       /*
