@@ -63,6 +63,12 @@ export default class Api {
         return Array(numberOfInstruments).fill('')
       }
     }
+    // If the number of instruments is not supported by the rule output blank
+    let validNumbersOfInstruments = this._rules[rule].number_of_instruments
+                                  // indexOf returns 0 (false) if not found
+    if (validNumbersOfInstruments.indexOf(numberOfInstruments)) {
+      throw new Error('This rule needs ' + validNumbersOfInstruments + ' instruments')
+    }
     let data = {
       chord,
       melody,

@@ -24,7 +24,7 @@ var removeNote = function (notes, note) {
 
 export default {
   name: 'Close',
-  number_of_instruments: '',
+  number_of_instruments: [4],
   makeVoicing: function ({chord, melody}) {
     // Helper functions
     melody = t.note.fromString(melody)
