@@ -32,7 +32,7 @@ export default class Api {
     return this.isValidNote(key) && key
   }
 
-  static transposeNote (note, key) {
+  transposeNote (note, key) {
     let refNote = teoria.note('C4')
     if (teoria.note(key).octave() === 2) {
       refNote.transpose(teoria.interval('P8').direction('down'))
@@ -42,7 +42,7 @@ export default class Api {
     return note.transpose(interval)
   }
 
-  static transposeVoicing (voicing, instruments) {
+  transposeVoicing (voicing, instruments) {
     let transposed = {}
     for (let id in instruments) {
       transposed[id] = this.transposeNote(voicing.pop(), instruments[id].key)
