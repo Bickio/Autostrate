@@ -1,5 +1,6 @@
 var t = require('teoria')
 
+// Helper functions
 var simpleNotes = function (notes) {
   let simple = []
   for (let note of notes) {
@@ -22,6 +23,7 @@ var removeNote = function (notes, note) {
   return notes
 }
 
+// Exported object which contains data and a function which makes the voicing
 export default {
   name: 'Close',
   number_of_instruments: [4],

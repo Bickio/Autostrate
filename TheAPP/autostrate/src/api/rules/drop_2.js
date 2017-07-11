@@ -1,6 +1,7 @@
 import t from 'teoria'
 import close from './close'
 
+// Exported object which contains data and a function which makes the voicing
 export default {
   name: 'Drop 2',
   number_of_instruments: [4],
