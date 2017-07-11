@@ -35,6 +35,11 @@
                    tag='a'>
         Home
       </router-link>
+      <router-link :to="'/projects'"
+                   class="nav-item is-tab"
+                   tag='a'>
+        Projects
+      </router-link>
       <router-link :to="'/editor'"
                    class="nav-item is-tab"
                    tag='a'>
