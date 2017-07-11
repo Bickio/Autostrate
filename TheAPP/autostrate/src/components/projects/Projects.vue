@@ -12,7 +12,7 @@
           <app-project-card></app-project-card>
         </div>
         <div class="column">
-          <app-project-card></app-project-card>
+          <app-new-project></app-new-project>
         </div>
       </div>
     </div>
@@ -21,13 +21,15 @@
 
 <script>
 import ProjectCard from './ProjectCard'
+import NewProject from './NewProject'
 export default {
   name: 'Projects',
   data: () => ({
 
   }),
   components: {
-    'app-project-card': ProjectCard
+    'app-project-card': ProjectCard,
+    'app-new-project': NewProject
   }
 }
 </script>
