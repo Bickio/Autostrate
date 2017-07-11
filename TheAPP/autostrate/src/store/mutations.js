@@ -35,6 +35,7 @@ export default {
     }
     Vue.set(state.projects, id, project)
     state.project_order.push(id)
+    state.current_project_id = id
   },
   updateProjectProperty (state, [projectId, property, value]) {
     state.projects[projectId][property] = value
