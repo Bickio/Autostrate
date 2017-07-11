@@ -50,25 +50,36 @@ export default class Api {
     return transposed
   }
 
-  voicing (chord, melody, rule, instruments) {
+  inputIsInvalid (chord, melody, rule, instruments) {
     let numberOfInstruments = Object.keys(instruments).length
     // Check for an empty field or unselected rule
     if (!chord || !melody || !rule) {
       // Output a blank output for each instrument
-      return Array(numberOfInstruments).fill('')
+      return true
     }
     // If any of the keys are blank output a blank voicing
     for (let i of Object.keys(instruments)) {
       if (!instruments[i].key) {
-        return Array(numberOfInstruments).fill('')
+        return true
       }
+    }
+    if (!t.chord.isKnownChord(chord) || !t.note.name(melody)) {
+      return true
     }
     // If the number of instruments is not supported by the rule output blank
     let validNumbersOfInstruments = this._rules[rule].number_of_instruments
-                                  // indexOf returns 0 (false) if not found
+    // indexOf returns 0 (false) if not found
     if (validNumbersOfInstruments.indexOf(numberOfInstruments)) {
       throw new Error('This rule needs ' + validNumbersOfInstruments + ' instruments')
     }
+    return false
+  }
+
+  voicing (chord, melody, rule, instruments) {
+    if (this.inputIsInvalid(chord, melody, rule, instruments)) {
+      return Array(numberOfInstruments).fill('')
+    }
+    let numberOfInstruments = Object.keys(instruments).length
     let data = {
       chord,
       melody,
