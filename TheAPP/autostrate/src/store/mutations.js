@@ -19,6 +19,23 @@ function insertColumn (state, projectId, index) {
 }
 
 export default {
+  newProject (state) {
+    let id = createId('p')
+    let project = {
+      id: id,
+      name: '',
+      key: '',
+      default_rule: '',
+      instrument_order: [],
+      instruments: {
+      },
+      column_order: [],
+      columns: {
+      }
+    }
+    Vue.set(state.projects, id, project)
+    state.project_order.push(id)
+  },
   updateProjectProperty (state, [projectId, property, value]) {
     state.projects[projectId][property] = value
   },
