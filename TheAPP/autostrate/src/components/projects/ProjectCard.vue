@@ -2,23 +2,20 @@
   <div class="card">
     <header class="card-header">
       <p class="card-header-title">
-        Name
+        {{name}}
       </p>
     </header>
     <div class="card-content">
       <div class="content">
         <div class="columns">
           <div class="column is-6">
-            <h5>Key: Am</h5>
-            <h5>Length: 5</h5>
+            <h5>Key: {{key}}</h5>
+            <h5>Length: {{length}} bars</h5>
           </div>
           <div class="column is-6">
             <h5>Instruments:</h5>
             <ul>
-              <li>Trumpet</li>
-              <li>Alto Sax</li>
-              <li>Tenor Sax</li>
-              <li>Trombone</li>
+              <li v-for="instrumentName in instrumentNames">{{instrumentName}}</li>
             </ul>
           </div>
         </div>
@@ -32,7 +29,28 @@
 </template>
 <script>
 export default {
-  name: 'ProjectCard'
+  props: ['id'],
+  name: 'ProjectCard',
+  computed: {
+    name () {
+      return this.$store.getters.projectNameById(this.id)
+    },
+    key () {
+      return this.$store.getters.projectKeyById(this.id)
+    },
+    length () {
+      return this.$store.getters.columnOrderById(this.id).length
+    },
+    instrumentNames () {
+      let order = this.$store.getters.instrumentOrderById(this.id)
+      let instruments = this.$store.getters.instrumentsById(this.id)
+      let output = []
+      for (let id of order) {
+        output.push(instruments[id].name)
+      }
+      return output
+    }
+  }
 }
 </script>
 <style scoped>
