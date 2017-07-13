@@ -37,6 +37,9 @@ export default {
     state.project_order.push(id)
     state.current_project_id = id
   },
+  setCurrentProject (state, projectId) {
+    state.current_project_id = projectId
+  },
   updateProjectProperty (state, [projectId, property, value]) {
     state.projects[projectId][property] = value
   },
