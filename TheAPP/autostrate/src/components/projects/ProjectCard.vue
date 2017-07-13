@@ -55,6 +55,7 @@ export default {
   methods: {
     open () {
       this.$store.commit('setCurrentProject', this.id)
+      this.$router.push('editor')
     }
   }
 }
