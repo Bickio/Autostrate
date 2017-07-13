@@ -22,7 +22,8 @@
       </div>
     </div>
     <footer class="card-footer">
-      <a class="card-footer-item">Open</a>
+      <a class="card-footer-item"
+         @click="open">Open</a>
       <a class="card-footer-item">Delete</a>
     </footer>
   </div>
@@ -49,6 +50,11 @@ export default {
         output.push(instruments[id].name)
       }
       return output
+    }
+  },
+  methods: {
+    open () {
+      this.$store.commit('setCurrentProject', this.id)
     }
   }
 }
