@@ -1,45 +1,55 @@
 <template>
-  <div class="content has-text-centered">
-    <h1>{{msg}}!!!</h1>
-    <h2>
-      This is version {{version}}
-    </h2>
-    <div class="level">
-      <div class="level-item">
-        <div class="has-text-left">
-          <hr>
-          <h3>
-            Changelog:
-          </h3>
-          <ul>
-            <li>New voicing added: 4-part close</li>
-            <li>Both close and drop-2 voicings support specified octaves</li>
-            <li>Instrument transpositions support specified octaves relative to C4</li>
-            <li>Voicing rule box will go red if the input is invalid</li>
-            <li>Hovering over the voicing rule box will give you a hint about what's wrong</li>
-          </ul>
-          <hr>
-        </div>
-      </div>
-    </div>
+  <div class="container content">
+    <h1>Autostrate</h1>
+    <h4>A harmonization tool</h4>
+    <img src="http://via.placeholder.com/1920x1080">
+    <h5>Version 0.3</h5>
+    <hr>
 
-    <h2 class="title is-3">To get started click the 'editor' button</h2>
+    <h3>Features</h3>
+
+    <h4>Transposition</h4>
+    <p>Transpose any instrument to any key or octave. Save your trumpets the
+    pain of reading a concert chart.</p>
+    <img src="http://via.placeholder.com/350x240">
+
+    <h4>Chord recognition</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <img src="http://via.placeholder.com/350x240">
+
+    <h4>Lorem ipsum</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <img src="http://via.placeholder.com/350x240">
+
+    <h4>Lorem ipsum</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <img src="http://via.placeholder.com/350x240">
+
+    <hr>
+
+    <h3>"It looks really nice"</h3>
+    <h4>-Blake Walker</h4>
+
+    <hr>
+
+    <button type="button" class="button is-primary">Get Started</button>
   </div>
-
 </template>
 
 <script>
 export default {
-  name: 'hello',
+  name: 'Home',
   data () {
     return {
-      msg: 'Welcome to Autostrate',
       version: 0.3
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>
