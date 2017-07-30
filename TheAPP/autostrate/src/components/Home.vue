@@ -32,7 +32,11 @@
     <h3 id="grid-qtt" class="has-text-centered">"It looks really nice"</h3>
     <h4 id="grid-qta" class="has-text-centered">-Me</h4>
 
-    <button id="grid-btn" type="button" class="button is-primary">Get Started</button>
+    <router-link type="button" id="grid-btn"
+            :to="'/editor'"
+            tag="button"
+            class="button is-primary"
+            >Get Started</router-link>
   </div>
 </template>
 
@@ -70,6 +74,7 @@ export default {
 #grid-bgi {
   grid-area: 1 / 1 / 2 / 2;
   z-index: -4;
+  background-color: saddlebrown;
 }
 #grid-vsn {
   grid-area: vsn;
