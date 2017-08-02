@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-template content">
+  <div class="grid-template content container">
     <div id="grid-ttl">
       <h1 class="has-text-centered white-text text-shadow">Autostrate</h1>
       <h4 class="has-text-centered white-text text-shadow">A harmonization tool</h4>
@@ -10,24 +10,24 @@
     <h3 id="grid-hdg" class="has-text-centered">Features</h3>
 
     <h4 id="grid-fh1" class="has-text-centered">Transposition</h4>
-    <p id="grid-fp1">Transpose any instrument to any key or octave. Save your trumpets the
+    <p id="grid-fp1" class="has-text-centered">Transpose any instrument to any key or octave. Save your trumpets the
     pain of reading a concert chart.</p>
-    <img id="grid-fi1" src="http://lorempixel.com/350/240/technics/5">
+    <img id="grid-fi1" class="center-block" src="http://lorempixel.com/350/240/technics/5">
 
     <h4 id="grid-fh2" class="has-text-centered">Chord recognition</h4>
-    <p id="grid-fp2">Lorem ipsum dolor sit amet, consectetur adipisicing
+    <p id="grid-fp2" class="has-text-centered">Lorem ipsum dolor sit amet, consectetur adipisicing
       elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <img id="grid-fi2" src="http://lorempixel.com/350/240/technics/6">
+    <img id="grid-fi2" class="center-block" src="http://lorempixel.com/350/240/technics/6">
 
     <h4 id="grid-fh3" class="has-text-centered">Lorem ipsum</h4>
-    <p id="grid-fp3">Lorem ipsum dolor sit amet, consectetur adipisicing
+    <p id="grid-fp3" class="has-text-centered">Lorem ipsum dolor sit amet, consectetur adipisicing
       elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <img id="grid-fi3" src="http://lorempixel.com/350/240/technics/7">
+    <img id="grid-fi3" class="center-block" src="http://lorempixel.com/350/240/technics/7">
 
     <h4 id="grid-fh4" class="has-text-centered">Lorem ipsum</h4>
-    <p id="grid-fp4">Lorem ipsum dolor sit amet, consectetur adipisicing
+    <p id="grid-fp4" class="has-text-centered">Lorem ipsum dolor sit amet, consectetur adipisicing
       elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <img id="grid-fi4" src="http://lorempixel.com/350/240/technics/8">
+    <img id="grid-fi4" class="center-block" src="http://lorempixel.com/350/240/technics/8">
 
     <h3 id="grid-qtt" class="has-text-centered">"It looks really nice"</h3>
     <h4 id="grid-qta" class="has-text-centered">-Me</h4>
@@ -35,7 +35,7 @@
     <router-link type="button" id="grid-btn"
             :to="'/editor'"
             tag="button"
-            class="button is-primary"
+            class="button is-primary center-block"
             >Get Started</router-link>
   </div>
 </template>
@@ -63,7 +63,10 @@ export default {
   display: inline;
   grid-template: repeat(20, auto) / 1fr;
 }
-
+.center-block {
+  margin: auto;
+  display: block;
+}
 
 
 #grid-ttl {
@@ -133,7 +136,6 @@ export default {
   #grid-bgi {
     grid-area: 1 / 1 / 5 / 5;
     width: 100vw;
-    height: 100vh;
   }
 }
 </style>
