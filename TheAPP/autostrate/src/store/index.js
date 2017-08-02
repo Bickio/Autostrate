@@ -4,14 +4,15 @@ import mutations from './mutations'
 import actions from './actions'
 import * as getters from './getters'
 import Api from '../api/index'
+var api = new Api()
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     current_project_id: 'test',
-    rules: new Api().rules,
-    default_rule: '',
+    rules: api.rules,
+    default_rule: Object.keys(api.rules)[0],
     projects: {
       /*
       id: {
@@ -43,7 +44,7 @@ export default new Vuex.Store({
         id: 'test',
         name: '',
         key: '',
-        default_rule: '',
+        default_rule: Object.keys(api.rules)[0],
         instrument_order: [],
         instruments: {
         },
