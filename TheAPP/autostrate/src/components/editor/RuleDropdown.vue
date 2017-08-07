@@ -5,7 +5,7 @@
       <span class="select"
             :class="{'is-danger': error}"
             style="width: 100%;">
-        <select style="width: 100%;"
+        <select style="width: 100%; padding-right: 9px;"
                 :value="value"
                 @input="update($event.target.value)">
           <option v-for="rule in rules"
