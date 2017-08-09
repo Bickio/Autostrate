@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%">
+  <div style="height: 100%; min-height: 200px;">
     <a class="button is-primary is-outlined"
        style="height: 100%; width: 100%"
        @click="newProject">
