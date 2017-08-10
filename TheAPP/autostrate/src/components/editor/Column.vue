@@ -33,10 +33,11 @@
   </div>
   <app-rule-dropdown :value="column.rule"
                      :error="error"
-                     @input="updateProperty('rule', $event)">
+                     @input="updateProperty('rule', $event)"
+                     style="margin-bottom: 13px">
   </app-rule-dropdown>
-  <hr style="margin-top: 36px;">
-  <div style="margin-bottom: 24px; height: 45px;"
+  <hr style="margin: 28px 0;">
+  <div style="margin-bottom: 21px; height: 45px; padding-top: 7px;"
        v-for="id in instrumentOrder">
     <h2 class="title has-text-centered">{{ outputs[id] }}</h2>
   </div>
