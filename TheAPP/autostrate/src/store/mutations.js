@@ -40,6 +40,11 @@ export default {
   setCurrentProject (state, projectId) {
     state.current_project_id = projectId
   },
+  removeProject (state, projectId) {
+    Vue.delete(state.projects, projectId)
+    var index = state.project_order.indexOf(projectId)
+    Vue.delete(state.project_order, index)
+  },
   updateProjectProperty (state, [projectId, property, value]) {
     state.projects[projectId][property] = value
   },

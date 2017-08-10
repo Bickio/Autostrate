@@ -24,7 +24,8 @@
     <footer class="card-footer">
       <a class="card-footer-item"
          @click="open">Open</a>
-      <a class="card-footer-item">Delete</a>
+      <a class="card-footer-item"
+         @click="remove">Delete</a>
     </footer>
   </div>
 </template>
@@ -56,6 +57,9 @@ export default {
     open () {
       this.$store.commit('setCurrentProject', this.id)
       this.$router.push('editor')
+    },
+    remove () {
+      this.$store.commit('removeProject', this.id)
     }
   }
 }
