@@ -7,7 +7,7 @@
     </header>
     <div class="card-content">
       <div class="content">
-        <div class="columns">
+        <div class="columns is-desktop">
           <div class="column is-6">
             <h5>Key: {{key}}</h5>
             <h5>Length: {{length}} bars</h5>
