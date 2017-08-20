@@ -11,7 +11,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     current_project_id: 'test',
-    rules: new Api().rules,
+    rules: api.rules,
     default_rule: '',
     project_order: ['test'],
     projects: {
