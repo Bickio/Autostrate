@@ -33,10 +33,11 @@
   </div>
   <app-rule-dropdown :value="column.rule"
                      :error="error"
-                     @input="updateProperty('rule', $event)">
+                     @input="updateProperty('rule', $event)"
+                     style="margin-bottom: 13px">
   </app-rule-dropdown>
-  <hr style="margin-top: 36px;">
-  <div style="margin-bottom: 24px; height: 45px;"
+  <hr style="margin: 28px 0;">
+  <div style="margin-bottom: 21px; height: 45px; padding-top: 7px;"
        v-for="id in instrumentOrder">
     <h2 class="title has-text-centered">{{ outputs[id] }}</h2>
   </div>
@@ -45,7 +46,7 @@
 
 <script>
 import RuleDropdown from './RuleDropdown'
-import api from '../../api/index'
+import Api from '../../api/index'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -68,10 +69,10 @@ export default {
       return this.columns[this.id]
     },
     isValidChord () {
-      return api.isValidChord(this.column.chord)
+      return Api.isValidChord(this.column.chord)
     },
     isValidNote () {
-      return api.isValidNote(this.column.melody)
+      return Api.isValidNote(this.column.melody)
     },
     outputs () {
       let chord = this.column.chord
@@ -80,7 +81,7 @@ export default {
       let instruments = this.instruments
       var voicing
       try {
-        voicing = api.voicing(chord, melody, rule, instruments)
+        voicing = new Api().voicing(chord, melody, rule, instruments)
         this.error = ''
       } catch (error) {
         this.error = error.message

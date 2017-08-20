@@ -19,6 +19,36 @@ function insertColumn (state, projectId, index) {
 }
 
 export default {
+  newProject (state) {
+    let id = createId('p')
+    let project = {
+      id: id,
+      name: '',
+      key: '',
+      default_rule: '',
+      instrument_order: [],
+      instruments: {
+      },
+      column_order: [],
+      columns: {
+      }
+    }
+    Vue.set(state.projects, id, project)
+    state.project_order.push(id)
+    state.current_project_id = id
+  },
+  setCurrentProject (state, projectId) {
+    state.current_project_id = projectId
+  },
+  removeProject (state, projectId) {
+    if (state.project_order.length === 1) {
+      window.alert('You only have one project. \nMake a new one before deleting it.')
+    } else {
+      Vue.delete(state.projects, projectId)
+      var index = state.project_order.indexOf(projectId)
+      Vue.delete(state.project_order, index)
+    }
+  },
   updateProjectProperty (state, [projectId, property, value]) {
     state.projects[projectId][property] = value
   },

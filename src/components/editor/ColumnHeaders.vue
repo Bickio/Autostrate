@@ -3,15 +3,15 @@
                    is-one-third-tablet
                    is-one-quarter-desktop"
      style="padding-right: 20px;">
-  <div class="field is-hidden-mobile">
+  <div class="field is-hidden-mobile" style="padding-bottom: 5px;">
     <br class="title">
   </div>
   <!--These 2 headers are hidden on mobile,
   and are replaced by another 2 in the editor-->
-  <div class="field is-hidden-mobile">
+  <div class="field is-hidden-mobile" style="padding-bottom: 5px;">
     <h1 class="title">Chords</h1>
   </div>
-  <div class="field is-hidden-mobile">
+  <div class="field is-hidden-mobile" style="padding-bottom: 5px;">
     <h1 class="title">Melody</h1>
   </div>
   <div class="columns is-mobile is-gapless field" style="margin-bottom: 13px;">
@@ -23,7 +23,7 @@
                        @input="updateProjectDefaultRule($event)">
     </app-rule-dropdown>
   </div>
-  <div class="field">
+  <div class="field"  style="margin-bottom: 13px;">
     <h1 class="title">Instruments</h1>
   </div>
   <transition-group name="list" tag="div">

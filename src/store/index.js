@@ -3,7 +3,8 @@ import Vuex from 'vuex'
 import mutations from './mutations'
 import actions from './actions'
 import * as getters from './getters'
-import api from '../api/index'
+import Api from '../api/index'
+var api = new Api()
 
 Vue.use(Vuex)
 
@@ -12,6 +13,7 @@ export default new Vuex.Store({
     current_project_id: 'test',
     rules: api.rules,
     default_rule: '',
+    project_order: ['test'],
     projects: {
       /*
       id: {
@@ -41,8 +43,8 @@ export default new Vuex.Store({
       */
       test: {
         id: 'test',
-        name: '',
-        key: '',
+        name: 'Default Project',
+        key: 'C Major',
         default_rule: '',
         instrument_order: [],
         instruments: {
