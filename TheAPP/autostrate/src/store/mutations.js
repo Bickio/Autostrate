@@ -41,9 +41,13 @@ export default {
     state.current_project_id = projectId
   },
   removeProject (state, projectId) {
-    Vue.delete(state.projects, projectId)
-    var index = state.project_order.indexOf(projectId)
-    Vue.delete(state.project_order, index)
+    if (state.project_order.length === 1) {
+      window.alert('You only have one project. \nMake a new one before deleting it.')
+    } else {
+      Vue.delete(state.projects, projectId)
+      var index = state.project_order.indexOf(projectId)
+      Vue.delete(state.project_order, index)
+    }
   },
   updateProjectProperty (state, [projectId, property, value]) {
     state.projects[projectId][property] = value
