@@ -1,11 +1,11 @@
 <template>
-  <div class="card">
-    <header class="card-header">
+  <div class="card" style="height: 100%;">
+    <header class="card-header" style="height: 42px;">
       <p class="card-header-title">
         {{name}}
       </p>
     </header>
-    <div class="card-content">
+    <div class="card-content" style="height: calc(100% - 85px)">
       <div class="content">
         <div class="columns is-desktop">
           <div class="column is-6">
