@@ -14,7 +14,6 @@ export default {
   methods: {
     newProject () {
       this.$store.commit('newProject')
-      this.$router.push('editor')
     }
   }
 }
