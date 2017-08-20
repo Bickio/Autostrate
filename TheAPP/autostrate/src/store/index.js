@@ -12,7 +12,8 @@ export default new Vuex.Store({
   state: {
     current_project_id: 'test',
     rules: api.rules,
-    default_rule: Object.keys(api.rules)[0],
+    default_rule: '',
+    project_order: ['test'],
     projects: {
       /*
       id: {
@@ -42,9 +43,9 @@ export default new Vuex.Store({
       */
       test: {
         id: 'test',
-        name: '',
-        key: '',
-        default_rule: Object.keys(api.rules)[0],
+        name: 'Default Project',
+        key: 'C Major',
+        default_rule: '',
         instrument_order: [],
         instruments: {
         },
