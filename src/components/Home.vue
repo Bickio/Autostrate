@@ -3,7 +3,7 @@
     <div id="grid-ttl">
       <h1 class="has-text-centered white-text text-shadow">Autostrate</h1>
       <h4 class="has-text-centered white-text text-shadow">A harmonization tool</h4>
-      <h5 class="has-text-centered white-text text-shadow">Version 0.3</h5>
+      <h5 class="has-text-centered white-text text-shadow">Version 0.4</h5>
     </div>
     <img id="grid-bgi" src="http://lorempixel.com/1920/1080/technics/4">
 
@@ -29,8 +29,8 @@
       elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     <img id="grid-fi4" class="center-block" src="http://lorempixel.com/350/240/technics/8">
 
-    <h3 id="grid-qtt" class="has-text-centered">"It looks really nice"</h3>
-    <h4 id="grid-qta" class="has-text-centered">-Me</h4>
+    <h3 id="grid-qtt" class="has-text-centered">"The best thing since sliced strings"</h3>
+    <h4 id="grid-qta" class="has-text-centered">-Me (The dev)</h4>
 
     <router-link type="button" id="grid-btn"
             :to="'/editor'"
