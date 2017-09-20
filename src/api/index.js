@@ -4,7 +4,7 @@ import drop2 from './rules/drop_2'
 import close from './rules/close'
 
 const IMPORTED_RULES = [drop2, close]
-const OCTAVE = teoria.interval('P8').direction('down')
+const OCTAVE_DOWN = teoria.interval('P8').direction('down')
 
 /**
  * Creates a rules object with unique ids from a list of rules.
@@ -66,7 +66,7 @@ export default class Api {
     var refNote = teoria.note('C4')
     // If the key is in the second octave, put it down two octaves
     if ((teoria.note(key).octave() === 2) && (key.slice(-1) !== '2')) {
-      refNote.transpose(OCTAVE).transpose(OCTAVE)
+      refNote.transpose(OCTAVE_DOWN).transpose(OCTAVE_DOWN)
     }
     let interval = teoria.interval.between(teoria.note(key), refNote)
     return note.transpose(interval)
@@ -125,6 +125,7 @@ export default class Api {
    * @param {object} instruments - An object containing instruments.
    */
   voicing (chord, melody, rule, instruments) {
+    // If the input is not valid, return a blank voicing
     if (this.inputIsInvalid(chord, melody, rule, instruments)) {
       return Array(numberOfInstruments).fill('')
     }
@@ -135,10 +136,14 @@ export default class Api {
       numberOfInstruments,
       instruments
     }
+    // Create voicing
     let voicing
     voicing = this._rules[rule].makeVoicing(data)
+
+    // Transpose the voicing
     voicing = this.transposeVoicing(voicing, instruments)
 
+    // Convert voicing to strings
     for (let note in voicing) {
       if (!isNaN(melody.slice(-1))) {
         voicing[note] = voicing[note].scientific()
