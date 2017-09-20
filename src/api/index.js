@@ -4,6 +4,7 @@ import drop2 from './rules/drop_2'
 import close from './rules/close'
 
 const IMPORTED_RULES = [drop2, close]
+const OCTAVE = teoria.interval('P8').direction('down')
 
 /**
  * Creates a rules object with unique ids from a list of rules.
@@ -64,8 +65,8 @@ export default class Api {
     // Sets a reference note
     var refNote = teoria.note('C4')
     // If the key is in the second octave, put it down two octaves
-    if ((teoria.note(key).octave() === 2) && (key[-1] !== '2')) {
-      refNote.transpose(teoria.interval('P8').direction('down'))
+    if ((teoria.note(key).octave() === 2) && (key.slice(-1) !== '2')) {
+      refNote.transpose(OCTAVE).transpose(OCTAVE)
     }
     let interval = teoria.interval.between(teoria.note(key), refNote)
     return note.transpose(interval)
