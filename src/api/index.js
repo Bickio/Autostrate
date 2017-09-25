@@ -58,13 +58,16 @@ export default class Api {
   }
 
   /**
-   * Transposes a note from middle c to a given key
-   * @param {string} text - The string to be checked
+   * Transposes a note from concert to a given key
+   * @param {object} note - The note to be transposed
+   * @param {string} key - The note to be transposed
   */
   transposeNote (note, key) {
     // Sets a reference note
     var refNote = teoria.note('C4')
     // If the key is in the second octave, put it down two octaves
+    // This is to account for teoria automatically setting an undefined octave
+    // to 2 for some unknown reason. We want it to be 4 (middle c)
     if ((teoria.note(key).octave() === 2) && (key.slice(-1) !== '2')) {
       refNote.transpose(OCTAVE_DOWN).transpose(OCTAVE_DOWN)
     }
