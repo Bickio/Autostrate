@@ -42,7 +42,7 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: 'app-home',
   data () {
     return {
       version: 0.3

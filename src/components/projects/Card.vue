@@ -31,8 +31,13 @@
 </template>
 <script>
 export default {
-  props: ['id'],
-  name: 'ProjectCard',
+  name: 'projects-card',
+  props: {
+    id: {
+      type: String,
+      required: true
+    }
+  },
   computed: {
     name () {
       return this.$store.getters.projectNameById(this.id)

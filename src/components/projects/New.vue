@@ -11,6 +11,7 @@
 </template>
 <script>
 export default {
+  name: 'projects-new',
   methods: {
     newProject () {
       this.$store.commit('newProject')

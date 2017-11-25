@@ -1,21 +1,21 @@
 <template lang="html">
   <div class="container">
     <br>
-    <app-meta></app-meta>
+    <app-meta/>
     <transition-group class="columns is-mobile is-multiline is-gapless column-list"
                       tag="div"
                       name="list">
       <app-column-headers key="h"
-                          class="list-item"></app-column-headers>
+                          class="list-item"/>
       <app-mobile-headers key="mh"
-                          class="list-item"></app-mobile-headers>
+                          class="list-item"/>
       <app-column v-for="(id, index) in columnOrder"
                   class="list-item"
                   :key="id"
-                  :id="id"></app-column>
+                  :id="id"/>
       <app-add-bar @pushColumn="pushColumn"
                    class="list-item"
-                   key="ab"></app-add-bar>
+                   key="ab"/>
     </transition-group>
   </div>
 </template>
@@ -29,6 +29,14 @@ import Meta from './Meta'
 import MobileHeaders from './MobileHeaders'
 
 export default {
+  name: 'app-editor',
+  components: {
+    'app-mobile-headers': MobileHeaders,
+    'app-meta': Meta,
+    'app-column-headers': ColumnHeaders,
+    'app-column': Column,
+    'app-add-bar': AddBar
+  },
   computed: {
     ...mapGetters([
       'currentProjectId',
@@ -54,13 +62,6 @@ export default {
       this.$store.commit('updateDefaultRule', [projectId, rule])
     }
 
-  },
-  components: {
-    'app-mobile-headers': MobileHeaders,
-    'app-meta': Meta,
-    'app-column-headers': ColumnHeaders,
-    'app-column': Column,
-    'app-add-bar': AddBar
   }
 }
 </script>

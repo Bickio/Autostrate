@@ -30,6 +30,7 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  name: 'editor-mobileHeaders',
   computed: {
     ...mapGetters([
       'instruments',
@@ -39,5 +40,5 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 </style>

@@ -51,6 +51,7 @@
 
 <script>
 export default {
+  name: 'app-header',
   data () {
     return {
       navMenuOn: false
@@ -59,5 +60,5 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 </style>

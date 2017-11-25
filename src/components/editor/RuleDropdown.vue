@@ -19,8 +19,12 @@
 
 <script>
 export default {
+  name: 'editor-ruleDropdown',
   props: {
-    value: [Array, String],
+    value: {
+      type: String,
+      required: true
+    },
     error: {
       type: String,
       default: ''

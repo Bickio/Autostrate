@@ -16,6 +16,7 @@
 
 <script>
 export default {
+  name: 'editor-addBar',
   methods: {
     pushColumn () {
       this.$emit('pushColumn')
@@ -24,5 +25,5 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 </style>

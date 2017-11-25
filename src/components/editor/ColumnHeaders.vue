@@ -46,6 +46,11 @@ import RuleDropdown from './RuleDropdown'
 import InstrumentHeader from './InstrumentHeader'
 import { mapGetters } from 'vuex'
 export default {
+  name: 'editor-columnHeaders',
+  components: {
+    'app-rule-dropdown': RuleDropdown,
+    'app-instrument-header': InstrumentHeader
+  },
   computed: {
     ...mapGetters([
       'currentProjectId',
@@ -63,10 +68,6 @@ export default {
       let projectId = this.currentProjectId
       this.$store.commit('addInstrument', projectId)
     }
-  },
-  components: {
-    'app-rule-dropdown': RuleDropdown,
-    'app-instrument-header': InstrumentHeader
   }
 }
 </script>

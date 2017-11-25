@@ -28,6 +28,7 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  name: 'editor-meta',
   computed: {
     ...mapGetters([
       'currentProjectId',
@@ -44,5 +45,5 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 </style>

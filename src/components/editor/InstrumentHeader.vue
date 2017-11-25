@@ -33,7 +33,21 @@
 import { mapGetters } from 'vuex'
 import api from '../../api/index'
 export default {
-  props: ['instrument'],
+  name: 'editor-instrumentHeaders',
+  props: {
+    instrument: {
+      type: Object,
+      required: true,
+      validator: function (value) {
+        for (let attr in ['name', 'key', 'id']) {
+          if (!(attr in Object.keys(value))) {
+            return false
+          }
+          return true
+        }
+      }
+    }
+  },
   computed: {
     ...mapGetters([
       'currentProjectId'
@@ -59,5 +73,5 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 </style>

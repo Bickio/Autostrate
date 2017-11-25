@@ -50,13 +50,20 @@ import Api from '../../api/index'
 import { mapGetters } from 'vuex'
 
 export default {
+  name: 'editor-column',
+  components: {
+    'app-rule-dropdown': RuleDropdown
+  },
+  props: {
+    id: {
+      type: String,
+      required: true
+    }
+  },
   data () {
     return {
       error: ''
     }
-  },
-  props: {
-    id: String
   },
   computed: {
     ...mapGetters([
@@ -106,9 +113,6 @@ export default {
     capitaliseFirstLetter (string) {
       return string.charAt(0).toUpperCase() + string.slice(1)
     }
-  },
-  components: {
-    'app-rule-dropdown': RuleDropdown
   }
 }
 </script>
