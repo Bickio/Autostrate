@@ -14,7 +14,7 @@ function makeRules (ruleList) {
   let rules = {}
   for (let i = 0; i < ruleList.length; i++) {
     rules['r_' + i] = ruleList[i]
-    rules['r_' + i].id = ['r_' + i]
+    rules['r_' + i].id = 'r_' + i
   }
   return rules
 }
