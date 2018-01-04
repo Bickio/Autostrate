@@ -5,8 +5,10 @@ describe('api/rules/drop_2', () => {
     expect(Drop2.name)
       .to.equal('Drop 2')
   })
-  it('should have output the correct voicings', () => {
-    expect(Drop2.makeVoicing({chord: 'Am7', melody: 'C'})[1].toString(true))
+  it('should output the correct voicings', () => {
+    let voicing = Drop2.makeVoicing({chord: 'Am7', melody: 'C'})
+    let secondInstrumentNote = voicing[1].toString(true)
+    expect(secondInstrumentNote)
       .to.equal('e')
   })
 })

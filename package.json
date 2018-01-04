@@ -18,7 +18,7 @@
     "teoria": "^2.2.2",
     "tonal": "^0.69.6",
     "vue": "^2.2.6",
-    "vue-router": "^2.3.1",
+    "vue-router": "^2.8.1",
     "vuex": "^2.3.1"
   },
   "devDependencies": {
